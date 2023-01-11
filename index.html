@@ -47,30 +47,88 @@
 
     <!-- Step 1 start -->
 
-    <section class="personal-info">
+    <section class="step personal-info">
       <div class="heading">
         <h1 class="heading--primary">Personal info</h1>
-        <h4 class="heading--secondary">Please provide your name, email address, and phone number.</h4>
+        <h4 class="heading--secondary">
+          Please provide your name, email address, and phone number.
+        </h4>
       </div>
       <form action="" class="personal-info__form">
-        <label for="name" class="personal-info__form--label">Name</label><br>
-        <input type="text" name="name" placeholder="e.g. Stephen King" id=""><br>
-        <label for="name" class="personal-info__form--label">Email Address</label><br>
-        <input type="text" name="name" placeholder="e.g. stephenking@lorem.com" id=""><br>
-        <label for="name" class="personal-info__form--label">Phone Number</label><br>
-        <input type="text" name="name" placeholder="e.g. +1 234 567 890" id=""><br>
+        <label for="name" class="personal-info__form--label">Name</label><br />
+        <input
+          type="text"
+          name="name"
+          placeholder="e.g. Stephen King"
+          id=""
+        /><br />
+        <label for="name" class="personal-info__form--label"
+          >Email Address</label
+        ><br />
+        <input
+          type="text"
+          name="name"
+          placeholder="e.g. stephenking@lorem.com"
+          id=""
+        /><br />
+        <label for="name" class="personal-info__form--label">Phone Number</label
+        ><br />
+        <input
+          type="text"
+          name="name"
+          placeholder="e.g. +1 234 567 890"
+          id=""
+        /><br />
       </form>
       <button class="btn btn--next-step" type="submit">Next Step</button>
     </section>
-     
-     
 
     <!-- Step 1 end -->
 
     <!-- Step 2 start -->
-
-    Select your plan You have the option of monthly or yearly billing. Arcade
-    $9/mo Advanced $12/mo Pro $15/mo Monthly Yearly Go Back Next Step
+    <section class="step plan">
+      <div class="heading">
+        <h1 class="heading--primary">Select your plan</h1>
+        <h4 class="heading--secondary">
+          You have the option of monthly or yearly billing.
+        </h4>
+      </div>
+      <div class="options">
+        <!-- Arcade -->
+        <div class="options__option">
+          <div class="options__option---img-box">
+            <img src="" alt="" />
+          </div>
+          <h3 class="options__option--heading">Arcade</h3>
+          <h4 class="options__option--price">$9/mo</h4>
+        </div>
+      </div>
+        <!-- Advanced -->
+        <div class="options__option">
+          <div class="options__option---img-box">
+            <img src="" alt="" />
+          </div>
+          <h3 class="options__option--heading">Advanced</h3>
+          <h4 class="options__option--price">$12/mo</h4>
+        </div>
+      </div>
+        <!-- Pro -->
+        <div class="options__option">
+          <div class="options__option---img-box">
+            <img src="" alt="" />
+          </div>
+          <h3 class="options__option--heading">Pro</h3>
+          <h4 class="options__option--price">$15/mo</h4>
+        </div>
+      </div>
+      <div class="toggle-box">
+        <h4 class="toggle-box--option">Monthly</h4>
+        <span class="toggle-box--toggle"></span>
+        <h4 class="toggle-box--option">Yearly</h4>
+      </div>
+      <button class="btn btn--go-back">Go Back</button>
+      <button class="btn btn--next-step">Next Step</button>
+    </section>
 
     <!-- Step 2 end -->
 
