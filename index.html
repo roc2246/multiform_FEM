@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <!-- displays site properly based on user's device -->
 
     <link
@@ -10,8 +10,8 @@
       type="image/png"
       sizes="32x32"
       href="./assets/images/favicon-32x32.png"
-    />
-    <link rel="stylesheet" href="style.css" />
+    >
+    <link rel="stylesheet" href="style.css" >
 
     <title>Frontend Mentor | Multi-step form</title>
   </head>
@@ -49,34 +49,34 @@
           Please provide your name, email address, and phone number.
         </h4>
       </div>
-      <form action="" class="personal-info__form">
-        <label for="name" class="personal-info__form--label">Name</label><br />
+      <form class="personal-info__form">
+        <label for="name" class="personal-info__form--label">Name</label><br >
         <input
           class="personal-info__form--input"
           type="text"
           name="name"
           placeholder="e.g. Stephen King"
-          id=""
-        /><br />
-        <label for="name" class="personal-info__form--label"
+          id="name"
+        ><br >
+        <label for="email" class="personal-info__form--label"
           >Email Address</label
-        ><br />
+        ><br >
         <input
           class="personal-info__form--input"
-          type="text"
-          name="name"
+          type="email"
+          name="email"
           placeholder="e.g. stephenking@lorem.com"
-          id=""
-        /><br />
-        <label for="name" class="personal-info__form--label">Phone Number</label
-        ><br />
+          id="email"
+        ><br >
+        <label for="phone" class="personal-info__form--label">Phone Number</label
+        ><br >
         <input
           class="personal-info__form--input"
-          type="text"
-          name="name"
+          type="tel"
+          name="phone"
           placeholder="e.g. +1 234 567 890"
-          id=""
-        /><br />
+          id="phone"
+        ><br >
       </form>
       <button class="btn btn--next-step" type="submit">Next Step</button>
     </section>
@@ -94,39 +94,41 @@
         <!-- Arcade -->
         <div class="options__option">
           <div class="options__option---img-box">
-            <img src="" alt="" />
+            <img src="" alt="" >
           </div>
-          <label for="price" class="options__option--label">Arcade</label><br />
-          <div class="options__option--price">
+          <input class="options__option--label"  type="text" value="Arcade" readonly>
+          <h4 class="options__option--price">
             <span class="currency">$</span>
-            <input type="number" name="price" id="" value="9" readonly />
-            <span class="plan">/mo</span>
-          </div>
+            <input class="price" type="number" name="price" id="arcade-price" value="9" readonly>
+            <span class="slash">/</span>
+            <input class="plan" type="text" name="plan" id="arcade-plan" value="mo" readonly>
+          </h4>
         </div>
         <!-- Advanced -->
         <div class="options__option">
           <div class="options__option---img-box">
-            <img src="" alt="" />
+            <img src="" alt="" >
           </div>
-          <label for="price" class="options__option--label">Advanced</label
-          ><br />
-          <div class="options__option--price">
+          <input class="options__option--label"  type="text" value="Advanced" readonly>
+          <h4 class="options__option--price">
             <span class="currency">$</span>
-            <input type="number" name="price" id="" value="12" readonly />
-            <span class="plan">/mo</span>
-          </div>
+            <input class="price" type="number" name="price" id="advanced-price" value="12" readonly>
+            <span class="slash">/</span>
+            <input class="plan" type="text" name="plan" id="advanced-plan" value="mo" readonly>
+          </h4>
         </div>
         <!-- Pro -->
         <div class="options__option">
           <div class="options__option---img-box">
-            <img src="" alt="" />
+            <img src="" alt="" >
           </div>
-          <label for="price" class="options__option--label">Pro</label><br />
-          <div class="options__option--price">
+          <input class="options__option--label"  type="text" value="Pro" readonly>
+          <h4 class="options__option--price">
             <span class="currency">$</span>
-            <input type="number" name="price" id="" value="15" readonly />
-            <span class="plan">/mo</span>
-          </div>
+            <input class="price" type="number" name="price" id="pro-price" value="15" readonly>
+            <span class="slash">/</span>
+            <input class="plan" type="text" name="plan" id="pro-plan" value="mo" readonly>
+          </h4>
         </div>
         <!-- Toggle Box -->
         <div class="toggle-box">
