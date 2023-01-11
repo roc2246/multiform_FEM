@@ -20,24 +20,24 @@
 
     <section class="sidebar">
       <div class="sidebar__step">
-        <h3 class="sidebar__step--no">1</h3>
+        <button class="sidebar__step--no btn">1</button>
         <h4 class="sidebar__step--secondary">Step 1</h4>
         <h3 class="sidebar__step--primary">Your info</h3>
       </div>
 
       <div class="sidebar__step">
-        <h3 class="sidebar__step--no">2</h3>
+        <button class="sidebar__step--no btn">2</button>
         <h4 class="sidebar__step--secondary">Step 2</h4>
         <h3 class="sidebar__step--primary">Select Plan</h3>
       </div>
 
       <div class="sidebar__step">
-        <h3 class="sidebar__step--no">3</h3>
+        <button class="sidebar__step--no btn">3</button>
         <h4 class="sidebar__step--secondary">Step 3</h4>
         <h3 class="sidebar__step--primary">Add-ons</h3>
       </div>
       <div class="sidebar__step">
-        <h3 class="sidebar__step--no">4</h3>
+        <button class="sidebar__step--no btn">4</button>
         <h4 class="sidebar__step--secondary">Step 4</h4>
         <h3 class="sidebar__step--primary">Summary</h3>
       </div>
@@ -47,9 +47,23 @@
 
     <!-- Step 1 start -->
 
-    Personal info Please provide your name, email address, and phone number.
-    Name e.g. Stephen King Email Address e.g. stephenking@lorem.com Phone Number
-    e.g. +1 234 567 890 Next Step
+    <section class="personal-info">
+      <div class="heading">
+        <h1 class="heading--primary">Personal info</h1>
+        <h4 class="heading--secondary">Please provide your name, email address, and phone number.</h4>
+      </div>
+      <form action="" class="personal-info__form">
+        <label for="name" class="personal-info__form--label">Name</label><br>
+        <input type="text" name="name" placeholder="e.g. Stephen King" id=""><br>
+        <label for="name" class="personal-info__form--label">Email Address</label><br>
+        <input type="text" name="name" placeholder="e.g. stephenking@lorem.com" id=""><br>
+        <label for="name" class="personal-info__form--label">Phone Number</label><br>
+        <input type="text" name="name" placeholder="e.g. +1 234 567 890" id=""><br>
+      </form>
+      <button class="btn btn--next-step" type="submit">Next Step</button>
+    </section>
+     
+     
 
     <!-- Step 1 end -->
 
