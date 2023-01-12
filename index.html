@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <!-- displays site properly based on user's device -->
 
     <link
@@ -10,8 +10,8 @@
       type="image/png"
       sizes="32x32"
       href="./assets/images/favicon-32x32.png"
-    />
-    <link rel="stylesheet" href="style.css" />
+    >
+    <link rel="stylesheet" href="style.css" >
 
     <title>Frontend Mentor | Multi-step form</title>
   </head>
@@ -41,6 +41,7 @@
     </section>
     <!-- Sidebar end -->
 
+    <form class="plan-select">
     <!-- Step 1 start -->
     <section class="step personal-info">
       <div class="heading">
@@ -49,37 +50,37 @@
           Please provide your name, email address, and phone number.
         </h4>
       </div>
-      <form class="personal-info__form">
-        <label for="name" class="personal-info__form--label">Name</label><br />
+      <div class="personal-info__controls">
+        <label for="name" class="personal-info__controls--label">Name</label><br >
         <input
-          class="personal-info__form--input"
+          class="personal-info__controls--input"
           type="text"
           name="name"
           placeholder="e.g. Stephen King"
           id="name"
-        /><br />
-        <label for="email" class="personal-info__form--label"
+        ><br >
+        <label for="email" class="personal-info__controls--label"
           >Email Address</label
-        ><br />
+        ><br >
         <input
-          class="personal-info__form--input"
+          class="personal-info__controls--input"
           type="email"
           name="email"
           placeholder="e.g. stephenking@lorem.com"
           id="email"
-        /><br />
-        <label for="phone" class="personal-info__form--label"
+        ><br >
+        <label for="phone" class="personal-info__controls--label"
           >Phone Number</label
-        ><br />
+        ><br >
         <input
-          class="personal-info__form--input"
+          class="personal-info__controls--input"
           type="tel"
           name="phone"
           placeholder="e.g. +1 234 567 890"
           id="phone"
-        /><br />
-      </form>
-      <button class="btn btn--next-step" type="submit">Next Step</button>
+        ><br >
+      </div>
+      <button class="btn btn--next-step">Next Step</button>
     </section>
     <!-- Step 1 end -->
 
@@ -94,7 +95,7 @@
         <!-- Arcade -->
         <div class="plan__option">
           <div class="plan__option---img-box">
-            <img src="" alt="" />
+            <img src="../assets/images/icon-arcade.svg" alt="arcade-plan" >
           </div>
           <h4 class="plan__option--label">Arcade</h4>
           <h4 class="plan__option--price">
@@ -107,7 +108,7 @@
         <!-- Advanced -->
         <div class="plan__option">
           <div class="plan__option---img-box">
-            <img src="" alt="" />
+            <img src="../assets/images/icon-advanced.svg" alt="advanced-plan" >
           </div>
           <h4 class="plan__option--label">Advanced</h4>
           <h4 class="plan__option--price">
@@ -120,7 +121,7 @@
         <!-- Pro -->
         <div class="plan__option">
           <div class="plan__option---img-box">
-            <img src="" alt="" />
+            <img src="../assets/images/icon-pro.svg" alt="pro-plan" >
           </div>
           <h4 class="plan__option--label">Pro</h4>
           <h4 class="plan__option--price">
@@ -135,7 +136,7 @@
           <h4 class="toggle-box--option">Monthly</h4>
           <label class="toggle-box--toggle"
             ><input type="checkbox" checked
-          /></label>
+          ></label>
           <h4 class="toggle-box--option">Yearly</h4>
         </div>
         <button class="btn btn--go-back">Go Back</button>
@@ -144,64 +145,62 @@
     <!-- Step 2 end -->
 
     <!-- Step 3 start -->
-    <div class="section step add-ons">
+    <section class="section step add-ons">
       <div class="heading">
         <h1 class="heading--primary">Pick add-ons</h1>
         <h4 class="heading--secondary">
           Add-ons help enhance your gaming experience.
         </h4>
       </div>
-      <form class="add-ons__form">
 
         <!-- Online Service -->
-        <div class="add-ons__form--control">
+        <label class="add-ons--control">
           <input type="checkbox" name="online-service" id="online-service">
-          <h4 class="header-box">
+          <span class="header-box">
             <span class="header-box--primary">Online service</span>
             <span class="header-box--secondary">Access to multiplayer games</span>
-          </h4>
-          <h4 class="pricebox">
+          </span>
+          <span class="pricebox">
             <span class="pricebox--symbols">+$</span>
             <span class="pricebox--price">1</span>
             <span class="pricebox--slash">/</span>
             <span class="pricebox--plan">mo</span>
-          </h4>
-        </div>
+          </span>
+        </label>
 
         <!-- Larger Storage -->
-        <div class="add-ons__form--control">
+        <label class="add-ons--control">
           <input type="checkbox" name="larger-storage" id="larger-storage">
-          <h4 class="header-box">
+          <span class="header-box">
             <span class="header-box--primary">Larger storage</span>
             <span class="header-box--secondary">Extra 1TB of cloud save</span>
-          </h4>
-          <h4 class="pricebox">
+          </span>
+          <span class="pricebox">
             <span class="pricebox--symbols">+$</span>
             <span class="pricebox--price">2</span>
             <span class="pricebox--slash">/</span>
             <span class="pricebox--plan">mo</span>
-          </h4>
-        </div>
+          </span>
+        </label>
 
         <!-- Customizable Profile -->
-        <div class="add-ons__form--control">
+        <label class="add-ons--control">
           <input type="checkbox" name="customizable-profile" id="customizable-profile">
-          <h4 class="header-box">
+          <span class="header-box">
             <span class="header-box--primary">Customizable profile</span>
             <span class="header-box--secondary">Custom theme on your profile</span>
-          </h4>
-          <h4 class="pricebox">
+          </span>
+          <span class="pricebox">
             <span class="pricebox--symbols">+$</span>
             <span class="pricebox--price">2</span>
             <span class="pricebox--slash">/</span>
             <span class="pricebox--plan">mo</span>
-          </h4>
-        </div>
+          </span>
+        </label>
 
-      </form>
       <button class="btn btn--go-back">Go Back</button>
       <button class="btn btn--next-step">Next Step</button>
-    </div>
+    </section>
 
 
     <!-- Step 3 end -->
@@ -215,6 +214,7 @@
     Total (per month/year) Go Back Confirm
 
     <!-- Step 4 end -->
+  </form>
 
     <!-- Step 5 start -->
 
