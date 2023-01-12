@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
 
     <link
@@ -10,8 +10,8 @@
       type="image/png"
       sizes="32x32"
       href="./assets/images/favicon-32x32.png"
-    >
-    <link rel="stylesheet" href="style.css" >
+    />
+    <link rel="stylesheet" href="style.css" />
 
     <title>Frontend Mentor | Multi-step form</title>
   </head>
@@ -50,33 +50,34 @@
         </h4>
       </div>
       <form class="personal-info__form">
-        <label for="name" class="personal-info__form--label">Name</label><br >
+        <label for="name" class="personal-info__form--label">Name</label><br />
         <input
           class="personal-info__form--input"
           type="text"
           name="name"
           placeholder="e.g. Stephen King"
           id="name"
-        ><br >
+        /><br />
         <label for="email" class="personal-info__form--label"
           >Email Address</label
-        ><br >
+        ><br />
         <input
           class="personal-info__form--input"
           type="email"
           name="email"
           placeholder="e.g. stephenking@lorem.com"
           id="email"
-        ><br >
-        <label for="phone" class="personal-info__form--label">Phone Number</label
-        ><br >
+        /><br />
+        <label for="phone" class="personal-info__form--label"
+          >Phone Number</label
+        ><br />
         <input
           class="personal-info__form--input"
           type="tel"
           name="phone"
           placeholder="e.g. +1 234 567 890"
           id="phone"
-        ><br >
+        /><br />
       </form>
       <button class="btn btn--next-step" type="submit">Next Step</button>
     </section>
@@ -94,32 +95,49 @@
         <!-- Arcade -->
         <div class="options__option">
           <div class="options__option---img-box">
-            <img src="" alt="" >
+            <img src="" alt="" />
           </div>
-          <input class="options__option--label"  type="text" value="Arcade" readonly><br>
-            <input class="options__option--price" type="text" name="price" id="arcade-price" value="$9/mo" readonly>
+          <h4 class="options__option--label">Arcade</h4>
+          <h4 class="options__option--price">
+            <span class="currency">$</span>
+            <span class="price">9</span>
+            <span class="slash">/</span>
+            <span class="plan">mo</span>
+          </h4>
         </div>
         <!-- Advanced -->
         <div class="options__option">
           <div class="options__option---img-box">
-            <img src="" alt="" >
+            <img src="" alt="" />
           </div>
-          <input class="options__option--label"  type="text" value="Advanced" readonly><br>
-            <input class="options__option--price" type="text" name="price" id="advanced-price" value="$12/mo" readonly>
+          <h4 class="options__option--label">Advanced</h4>
+          <h4 class="options__option--price">
+            <span class="currency">$</span>
+            <span class="price">12</span>
+            <span class="slash">/</span>
+            <span class="plan">mo</span>
+          </h4>
         </div>
         <!-- Pro -->
         <div class="options__option">
           <div class="options__option---img-box">
-            <img src="" alt="" >
+            <img src="" alt="" />
           </div>
-          <input class="options__option--label"  type="text" value="Pro" readonly><br>
-            <input class="options__option--price" type="text" name="price" id="pro-price" value="$15/mo" readonly>
+          <h4 class="options__option--label">Pro</h4>
+          <h4 class="options__option--price">
+            <span class="currency">$</span>
+            <span class="price">15</span>
+            <span class="slash">/</span>
+            <span class="plan">mo</span>
+          </h4>
         </div>
         <!-- Toggle Box -->
         <div class="toggle-box">
-          <input class="toggle-box--option" type="text" value="Monthly" readonly>
-          <label class="toggle-box--toggle"><input type="checkbox" checked></label>
-          <input class="toggle-box--option" type="text" value="Yearly" readonly>
+          <h4 class="toggle-box--option">Monthly</h4>
+          <label class="toggle-box--toggle"
+            ><input type="checkbox" checked
+          /></label>
+          <h4 class="toggle-box--option">Yearly</h4>
         </div>
         <button class="btn btn--go-back" type="reset">Go Back</button>
         <button class="btn btn--next-step" type="submit">Next Step</button>
