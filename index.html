@@ -91,14 +91,13 @@
           You have the option of monthly or yearly billing.
         </h4>
       </div>
-      <form class="options">
         <!-- Arcade -->
-        <div class="options__option">
-          <div class="options__option---img-box">
+        <div class="plan__option">
+          <div class="plan__option---img-box">
             <img src="" alt="" />
           </div>
-          <h4 class="options__option--label">Arcade</h4>
-          <h4 class="options__option--price">
+          <h4 class="plan__option--label">Arcade</h4>
+          <h4 class="plan__option--price">
             <span class="currency">$</span>
             <span class="price">9</span>
             <span class="slash">/</span>
@@ -106,12 +105,12 @@
           </h4>
         </div>
         <!-- Advanced -->
-        <div class="options__option">
-          <div class="options__option---img-box">
+        <div class="plan__option">
+          <div class="plan__option---img-box">
             <img src="" alt="" />
           </div>
-          <h4 class="options__option--label">Advanced</h4>
-          <h4 class="options__option--price">
+          <h4 class="plan__option--label">Advanced</h4>
+          <h4 class="plan__option--price">
             <span class="currency">$</span>
             <span class="price">12</span>
             <span class="slash">/</span>
@@ -119,12 +118,12 @@
           </h4>
         </div>
         <!-- Pro -->
-        <div class="options__option">
-          <div class="options__option---img-box">
+        <div class="plan__option">
+          <div class="plan__option---img-box">
             <img src="" alt="" />
           </div>
-          <h4 class="options__option--label">Pro</h4>
-          <h4 class="options__option--price">
+          <h4 class="plan__option--label">Pro</h4>
+          <h4 class="plan__option--price">
             <span class="currency">$</span>
             <span class="price">15</span>
             <span class="slash">/</span>
@@ -139,18 +138,71 @@
           /></label>
           <h4 class="toggle-box--option">Yearly</h4>
         </div>
-        <button class="btn btn--go-back" type="reset">Go Back</button>
-        <button class="btn btn--next-step" type="submit">Next Step</button>
-      </form>
+        <button class="btn btn--go-back">Go Back</button>
+        <button class="btn btn--next-step">Next Step</button>
     </section>
     <!-- Step 2 end -->
 
     <!-- Step 3 start -->
+    <div class="section step add-ons">
+      <div class="heading">
+        <h1 class="heading--primary">Pick add-ons</h1>
+        <h4 class="heading--secondary">
+          Add-ons help enhance your gaming experience.
+        </h4>
+      </div>
+      <form class="add-ons__form">
 
-    Pick add-ons Add-ons help enhance your gaming experience. Online service
-    Access to multiplayer games +$1/mo Larger storage Extra 1TB of cloud save
-    +$2/mo Customizable Profile Custom theme on your profile +$2/mo Go Back Next
-    Step
+        <!-- Online Service -->
+        <div class="add-ons__form--control">
+          <input type="checkbox" name="online-service" id="online-service">
+          <h4 class="header-box">
+            <span class="header-box--primary">Online service</span>
+            <span class="header-box--secondary">Access to multiplayer games</span>
+          </h4>
+          <h4 class="pricebox">
+            <span class="pricebox--symbols">+$</span>
+            <span class="pricebox--price">1</span>
+            <span class="pricebox--slash">/</span>
+            <span class="pricebox--plan">mo</span>
+          </h4>
+        </div>
+
+        <!-- Larger Storage -->
+        <div class="add-ons__form--control">
+          <input type="checkbox" name="larger-storage" id="larger-storage">
+          <h4 class="header-box">
+            <span class="header-box--primary">Larger storage</span>
+            <span class="header-box--secondary">Extra 1TB of cloud save</span>
+          </h4>
+          <h4 class="pricebox">
+            <span class="pricebox--symbols">+$</span>
+            <span class="pricebox--price">2</span>
+            <span class="pricebox--slash">/</span>
+            <span class="pricebox--plan">mo</span>
+          </h4>
+        </div>
+
+        <!-- Customizable Profile -->
+        <div class="add-ons__form--control">
+          <input type="checkbox" name="customizable-profile" id="customizable-profile">
+          <h4 class="header-box">
+            <span class="header-box--primary">Customizable profile</span>
+            <span class="header-box--secondary">Custom theme on your profile</span>
+          </h4>
+          <h4 class="pricebox">
+            <span class="pricebox--symbols">+$</span>
+            <span class="pricebox--price">2</span>
+            <span class="pricebox--slash">/</span>
+            <span class="pricebox--plan">mo</span>
+          </h4>
+        </div>
+
+      </form>
+      <button class="btn btn--go-back">Go Back</button>
+      <button class="btn btn--next-step">Next Step</button>
+    </div>
+
 
     <!-- Step 3 end -->
 
