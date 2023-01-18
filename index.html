@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <!-- displays site properly based on user's device -->
 
     <link
@@ -10,14 +10,14 @@
       type="image/png"
       sizes="32x32"
       href="./assets/images/favicon-32x32.png"
-    />
-    <link rel="stylesheet" href="style.css" />
+    >
+    <link rel="stylesheet" href="style.css" >
 
     <title>Frontend Mentor | Multi-step form</title>
   </head>
   <body>
     <!-- Sidebar start -->
-    <section class="sidebar">
+    <nav class="sidebar">
       <div class="sidebar__step">
         <h3 class="sidebar__step--no">1</h3>
         <h4 class="sidebar__step--secondary">Step 1</h4>
@@ -38,48 +38,48 @@
         <h4 class="sidebar__step--secondary">Step 4</h4>
         <h3 class="sidebar__step--primary">Summary</h3>
       </div>
-    </section>
+    </nav>
     <!-- Sidebar end -->
 
     <form class="plan-select">
       <!-- Step 1 start -->
       <section class="step personal-info">
-        <div class="heading">
-          <h1 class="heading--primary">Personal info</h1>
-          <h4 class="heading--secondary">
+        <h2 class="heading">
+          <span class="heading--primary">Personal info</span>
+          <span class="heading--secondary">
             Please provide your name, email address, and phone number.
-          </h4>
-        </div>
+          </span>
+        </h2>
         <div class="personal-info__controls">
           <label for="name" class="personal-info__controls--label">Name</label
-          ><br />
+          ><br >
           <input
             class="personal-info__controls--input"
             type="text"
             name="name"
             placeholder="e.g. Stephen King"
             id="name"
-          /><br />
+          ><br >
           <label for="email" class="personal-info__controls--label"
             >Email Address</label
-          ><br />
+          ><br >
           <input
             class="personal-info__controls--input"
             type="email"
             name="email"
             placeholder="e.g. stephenking@lorem.com"
             id="email"
-          /><br />
+          ><br >
           <label for="phone" class="personal-info__controls--label"
             >Phone Number</label
-          ><br />
+          ><br >
           <input
             class="personal-info__controls--input"
             type="tel"
             name="phone"
             placeholder="e.g. +1 234 567 890"
             id="phone"
-          /><br />
+          ><br >
         </div>
         <div class="btn-box">
           <button class="btn btn--next-step">Next Step</button>
@@ -89,16 +89,16 @@
 
       <!-- Step 2 start -->
       <section class="step plan" id="plan">
-        <div class="heading">
-          <h1 class="heading--primary">Select your plan</h1>
-          <h4 class="heading--secondary">
+        <h2 class="heading">
+          <span class="heading--primary">Select your plan</span>
+          <span class="heading--secondary">
             You have the option of monthly or yearly billing.
-          </h4>
-        </div>
+          </span>
+        </h2>
         <!-- Arcade -->
         <div class="plan__option">
           <div class="plan__option---img-box">
-            <img src="../assets/images/icon-arcade.svg" alt="arcade-plan" />
+            <img src="../assets/images/icon-arcade.svg" alt="arcade-plan" >
           </div>
           <h4 class="plan__option--name">Arcade</h4>
           <h4 class="plan__option--price">$9/mo</h4>
@@ -106,7 +106,7 @@
         <!-- Advanced -->
         <div class="plan__option">
           <div class="plan__option---img-box">
-            <img src="../assets/images/icon-advanced.svg" alt="advanced-plan" />
+            <img src="../assets/images/icon-advanced.svg" alt="advanced-plan" >
           </div>
           <h4 class="plan__option--name">Advanced</h4>
           <h4 class="plan__option--price">$12/mo</h4>
@@ -114,7 +114,7 @@
         <!-- Pro -->
         <div class="plan__option">
           <div class="plan__option---img-box">
-            <img src="../assets/images/icon-pro.svg" alt="pro-plan" />
+            <img src="../assets/images/icon-pro.svg" alt="pro-plan" >
           </div>
           <h4 class="plan__option--name">Pro</h4>
           <h4 class="plan__option--price">$15/mo</h4>
@@ -124,7 +124,7 @@
           <h4 class="plan__toggle-box--option">Monthly</h4>
           <label class="plan__toggle-box--toggle"
             ><input type="checkbox" checked
-          /></label>
+          ></label>
           <h4 class="plan__toggle-box--option">Yearly</h4>
         </div>
         <div class="btn-box">
@@ -136,12 +136,12 @@
 
       <!-- Step 3 start -->
       <section class="step add-ons">
-        <div class="heading">
-          <h1 class="heading--primary">Pick add-ons</h1>
-          <h4 class="heading--secondary">
+        <h2 class="heading">
+          <span class="heading--primary">Pick add-ons</span>
+          <span class="heading--secondary">
             Add-ons help enhance your gaming experience.
-          </h4>
-        </div>
+          </span>
+        </h2>
 
         <!-- Online Service -->
         <label class="add-ons__control">
@@ -150,7 +150,7 @@
             type="checkbox"
             name="online-service"
             id="online-service"
-          />
+          >
           <span class="add-ons__control--type">Online service</span>
           <span class="add-ons__control--description"
             >Access to multiplayer games</span
@@ -165,7 +165,7 @@
             type="checkbox"
             name="larger-storage"
             id="larger-storage"
-          />
+          >
           <span class="add-ons__control--type">Larger storage</span>
           <span class="add-ons__control--description"
             >Extra 1TB of cloud save</span
@@ -180,7 +180,7 @@
             type="checkbox"
             name="customizable-profile"
             id="customizable-profile"
-          />
+          >
           <span class="add-ons__type">Customizable profile</span>
           <span class="add-ons__control--description"
             >Custom theme on your profile</span
@@ -197,12 +197,12 @@
 
       <!-- Step 4 start -->
       <section class="step confirmation">
-        <div class="heading">
-          <h1 class="heading--primary">Finishing up</h1>
-          <h4 class="heading--secondary">
+        <h2 class="heading">
+          <span class="heading--primary">Finishing up</span>
+          <span class="heading--secondary">
             Double-check everything looks OK before confirming.
-          </h4>
-        </div>
+          </span>
+        </h2>
 
         <div class="confirmation__orders">
           <!-- Dynamically add subscription and add-on selections here -->
@@ -214,7 +214,7 @@
             <h4 class="plan-price"></h4>
           </div>
 
-          <hr />
+          <hr >
 
           <!-- Add-Ons -->
           <div class="confirmation__orders--add-ons">
@@ -237,15 +237,15 @@
     </form>
 
     <!-- Step 5 start -->
-    <sections class="step thank-you">
+    <div class="step thank-you">
       <div class="thank-you__img-box">
         <img
           class="thank-you__img-box--img"
           src="../assets/images/icon-thank-you.svg"
           alt="thank-you"
-        />
+        >
       </div>
-      <h1 class="thank-you__heading">Thank you!</h1>
+      <h2 class="thank-you__heading">Thank you!</h2>
       <p class="thank-you__paragraph">
         Thank you! Thanks for confirming your subscription! We hope you have fun
         using our platform. If you ever need support, please feel free to email
@@ -256,7 +256,7 @@
           >support@loremgaming.com</a
         >.
       </p>
-    </sections>
+    </div>
     <!-- Step 5 end -->
 
     <script src="script.js"></script>
