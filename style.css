@@ -7,6 +7,44 @@ body{
     flex-direction: row;
 }
 
+/* Sidebar */
+.sidebar{
+    background-color: grey;
+    padding: 1rem;
+}
+
+.sidebar__step{
+    display: grid;
+    grid-template-columns: 2;
+}
+
+.sidebar__step--no{
+    grid-column: 1;
+
+    border-radius: 50%;
+    border: solid;
+   
+    width: 1.5rem;
+    height: 1.5rem;
+
+    text-align: center;
+}
+
+.sidebar__step--secondary{
+    grid-column: 2;
+    grid-row: 1;
+
+    margin: 0;
+}
+
+.sidebar__step--primary{
+    grid-column: 2;
+    grid-row: 2;
+
+    margin: 0;
+}
+
+/* Form */
 .plan-select{
     display: flex;
     flex-direction: row;
@@ -14,8 +52,4 @@ body{
 
 section:not(.step:nth-child(1)){
     display: none;
-}
-
-.step{
-    margin-left: 20rem;
 }
