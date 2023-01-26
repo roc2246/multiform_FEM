@@ -14,15 +14,17 @@ body {
 .sidebar {
   background-color: grey;
   padding: 1rem;
+  width: 20rem;
+  padding: 2rem;
+
 }
 
 .sidebar__step {
   display: grid;
-  column-gap: 1rem;
+  column-gap: 1.5rem;
   grid-template-columns: 2rem auto;
 
-  margin-top: 1rem;
-  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 .sidebar__step--no {
