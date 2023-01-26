@@ -14,6 +14,7 @@ main {
   flex-direction: row;
 
   max-width: 80rem;
+  height: 40rem;
 
   padding: 1rem;
 }
@@ -71,6 +72,8 @@ main {
   margin-right: auto;
 
   height: 100%;
+
+  position: relative;
 }
 
 section:not(.step:nth-child(1)) {
@@ -78,7 +81,11 @@ section:not(.step:nth-child(1)) {
 }
 
 .btn-box {
-  margin-top: 10vh;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 2rem;
+
+  width: 100%;
 }
 
 .btn--go-back {
@@ -88,6 +95,8 @@ section:not(.step:nth-child(1)) {
 .btn--next-step {
   float: right;
 }
+
+
 
 /* Form */
 .plan-select {
