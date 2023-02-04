@@ -76,7 +76,7 @@ main {
   position: relative;
 }
 
-section:not(.step:nth-child(1)) {
+section:not(.step:nth-child(2)) {
   display: none;
 }
 
@@ -96,8 +96,6 @@ section:not(.step:nth-child(1)) {
   float: right;
 }
 
-
-
 /* Form */
 .plan-select {
   display: flex;
@@ -113,3 +111,32 @@ section:not(.step:nth-child(1)) {
 
   margin-bottom: 1rem;
 }
+
+/* Plan */
+.plan {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.plan .heading {
+  grid-row: 1;
+  grid-column: 1/4;
+}
+
+.plan__option {
+  grid-row: 2;
+}
+
+.plan__toggle-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  grid-row: 3;
+  grid-column: 1/4;
+}
+
+.plan__toggle-box--option{
+  margin-top: 0;
+}
+
