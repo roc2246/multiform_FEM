@@ -76,7 +76,7 @@ main {
   position: relative;
 }
 
-section:not(.step:nth-child(3)) {
+section:not(.step:nth-child(1)) {
   display: none;
 }
 
@@ -136,45 +136,64 @@ section:not(.step:nth-child(3)) {
   grid-column: 1/4;
 }
 
-.plan__toggle-box--option{
+.plan__toggle-box--option {
   margin-top: 0;
 }
 
 /* Add-Ons */
-.add-ons{
+.add-ons {
   display: flex;
   flex-direction: column;
 }
 
-.add-ons__control{
+.add-ons__control {
   display: grid;
   grid-template-columns: 3rem repeat(2, auto);
 
-  margin-top: .5rem;
-  margin-bottom: .5rem;
-  padding: .75rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.75rem;
 
   border: solid;
 }
 
-.add-ons__control--checkbox{
+.add-ons__control--checkbox {
   grid-column: 1;
 }
 
-.add-ons__control--type{
+.add-ons__control--type {
   grid-column: 2;
   grid-row: 1;
 
-  margin-bottom: .25rem;
+  margin-bottom: 0.25rem;
 }
 
-.add-ons__control--description{
+.add-ons__control--description {
   grid-column: 2;
   grid-row: 2;
 }
 
-.add-ons__control--price{
+.add-ons__control--price {
   grid-column: 3;
 
   margin-left: auto;
+}
+
+/* Summary */
+
+/* Thank You */
+.thank-you {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.thank-you__img-box,
+.thank-you__heading {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.thank-you__paragraph {
+  text-align: center;
 }
