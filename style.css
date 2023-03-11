@@ -4,6 +4,7 @@ html {
 
 body {
   height: 80vh;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +17,13 @@ main {
   max-width: 80rem;
   height: 40rem;
 
-  padding: 1rem;
+}
+
+@media (max-width: 480px) {
+  main {
+    flex-direction: column;
+    padding: 0;
+  }
 }
 
 /* Sidebar */
@@ -24,6 +31,19 @@ main {
   background-color: grey;
   width: 20rem;
   padding: 2rem;
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 10rem;
+    padding: 0;
+  }
 }
 
 .sidebar__step {
@@ -66,6 +86,13 @@ main {
   margin: 0;
 }
 
+@media (max-width: 480px) {
+  .sidebar__step--secondary,
+  .sidebar__step--primary {
+    display: none;
+  }
+}
+
 /* Steps */
 .step {
   margin-left: auto;
@@ -76,7 +103,7 @@ main {
   position: relative;
 }
 
-section:not(.step:nth-child(2)) {
+section:not(.step:nth-child(1)) {
   display: none;
 }
 
@@ -136,12 +163,12 @@ section:not(.step:nth-child(2)) {
 }
 
 .plan__toggle-box--option {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 
 /* Toggle Switch */
 
-.plan__toggle-box--toggle{
+.plan__toggle-box--toggle {
   position: relative;
   display: inline-block;
   width: 60px;
@@ -151,7 +178,7 @@ section:not(.step:nth-child(2)) {
   margin-right: 1rem;
 }
 
-.plan__toggle-box--round{
+.plan__toggle-box--round {
   border-radius: 34px;
 
   position: absolute;
@@ -161,11 +188,11 @@ section:not(.step:nth-child(2)) {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
-.plan__toggle-box--round:before{
+.plan__toggle-box--round:before {
   border-radius: 50%;
 
   position: absolute;
@@ -175,16 +202,16 @@ section:not(.step:nth-child(2)) {
   left: 4px;
   bottom: 4px;
   background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 input:checked + .plan__toggle-box--round {
-  background-color: #2196F3;
+  background-color: #2196f3;
 }
 
 input:focus + .plan__toggle-box--round {
-  box-shadow: 0 0 1px #2196F3;
+  box-shadow: 0 0 1px #2196f3;
 }
 
 input:checked + .plan__toggle-box--round:before {
