@@ -131,26 +131,29 @@ section:not(.step:nth-child(2)) {
   display: flex;
   flex-direction: row;
   justify-content: center;
-
   grid-row: 3;
   grid-column: 1/4;
 }
 
 .plan__toggle-box--option {
-  margin-top: 0;
+  margin-top: .5rem;
 }
 
-/* .plan__toggle-box--toggle */
-/* .plan__toggle-box--round */
+/* Toggle Switch */
 
 .plan__toggle-box--toggle{
   position: relative;
   display: inline-block;
   width: 60px;
   height: 34px;
+
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .plan__toggle-box--round{
+  border-radius: 34px;
+
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -163,6 +166,8 @@ section:not(.step:nth-child(2)) {
 }
 
 .plan__toggle-box--round:before{
+  border-radius: 50%;
+
   position: absolute;
   content: "";
   height: 26px;
@@ -188,14 +193,6 @@ input:checked + .plan__toggle-box--round:before {
   transform: translateX(26px);
 }
 
-
-.plan__toggle-box--round {
-  border-radius: 34px;
-}
-
-.plan__toggle-box--round:before {
-  border-radius: 50%;
-}
 /* Add-Ons */
 .add-ons {
   display: flex;
