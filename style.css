@@ -13,9 +13,9 @@ body {
 main {
   display: grid;
   grid-template-columns: repeat(2, auto);
+  column-gap: 4rem;
 
   max-width: 80rem;
-  height: auto;
 }
 
 @media (max-width: 480px) {
@@ -98,6 +98,8 @@ main {
 .step {
   grid-column: 2;
   grid-row: 1/2;
+
+  height: 40rem;
 }
 
 @media(max-width: 480px) {
@@ -127,7 +129,7 @@ section:not(.step:nth-child(1)) {
   grid-row: 2/3;
 
   background-color: red;
-  height: 6rem;
+  height: 4rem;
 }
 
 .btn--go-back {
