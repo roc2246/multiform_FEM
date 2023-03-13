@@ -20,7 +20,8 @@ main {
 
 @media (max-width: 480px) {
   main {
-    grid-template-columns: auto;
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -42,7 +43,7 @@ main {
     align-items: center;
 
     width: 100%;
-    height: 10rem;
+    height: 30rem;
     padding: 0;
   }
 }
@@ -54,6 +55,13 @@ main {
 
   margin-bottom: 2rem;
 }
+
+@media (max-width: 480px) {
+  .sidebar__step {
+    margin-bottom: -10rem;
+  }
+}
+
 
 .sidebar__step--no {
   display: flex;
@@ -110,10 +118,10 @@ main {
     padding-right: 1rem;
     padding-bottom: 2rem;
 
-    background-color: white;
     margin-top: -4rem;
   
     border-radius: .5rem;
+  height: 40rem;
 
     background-color: red;
 
