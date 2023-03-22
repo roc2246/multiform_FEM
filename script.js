@@ -27,7 +27,6 @@ function btnMgmt() {
     prevStep.style.display = "inline-block";
   }
 
-  if (stepNo === steps.length) stepNo = 0;
 }
 
 function stepIncrement(inc) {
