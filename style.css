@@ -152,10 +152,16 @@ section:not(.step:nth-child(1)) {
 
 .btn--go-back {
   float: left;
+  display: none;
 }
 
 .btn--next-step {
   float: right;
+}
+
+.btn--confirm {
+  float: right;
+  display: none;
 }
 
 @media(max-width: 480px) {
