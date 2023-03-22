@@ -4,7 +4,7 @@ const steps = document.getElementsByClassName("step");
 
 const nextStep = document.getElementsByClassName("btn--next-step")[0];
 const prevStep = document.getElementsByClassName("btn--go-back")[0];
-const confirmBtn = document.getElementsByClassName("btn--confirmBtn")[0]
+const confirmBtn = document.getElementsByClassName("btn--confirm")[0]
 
 function hideSteps () {
     Object.keys(steps).forEach((step) => {
