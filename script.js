@@ -45,25 +45,23 @@ function btnMgmt() {
 
 function verify(regex, input) {
   if (!regex.test(input.value)) {
-    input.value = ""
+    input.value = "";
     input.focus();
   }
 }
 
-let formatPhoneNumber = (str) => {
-  //Filter only numbers from the input
-  let cleaned = ('' + str).replace(/\D/g, '');
-  
-  //Check if the input is of correct length
-  let match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+function formatPhone(obj) {
+  var numbers = obj.value.replace(/\D/g, ""),
+    char = { 0: "(", 3: ") ", 6: "-" };
+  obj.value = "";
+  for (var i = 0; i < numbers.length; i++) {
+    obj.value += (char[i] || "") + numbers[i];
+  }
+}
 
-  if (match) {
-    return '(' + match[1] + ') ' + match[2] + '-' + match[3]
-  };
-
-  return null
-};
-
+phoneInput.addEventListener("keyup", () => {
+  formatPhone(phoneInput);
+});
 
 function stepIncrement(inc) {
   if (
@@ -75,11 +73,11 @@ function stepIncrement(inc) {
     stepNo += inc;
     steps[stepNo].style.display = "block";
     btnMgmt();
-  } 
+  }
 
-  verify(checkName, nameInput)
-  verify(checkEmail, emailInput)
-  verify(checkPhone, phoneInput)
+  verify(checkName, nameInput);
+  verify(checkEmail, emailInput);
+  verify(checkPhone, phoneInput);
 }
 
 nextStep.onclick = () => {
