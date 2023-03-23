@@ -51,12 +51,12 @@ function verify(regex, input) {
 }
 
 function formatPhone(obj) {
-  var numbers = obj.value.replace(/\D/g, ""),
-    char = { 0: "(", 3: ") ", 6: "-" };
+  const numbers = obj.value.replace(/\D/g, "");
+  const char = { 0: "(", 3: ") ", 6: "-" };
   obj.value = "";
-  for (var i = 0; i < numbers.length; i++) {
-    obj.value += (char[i] || "") + numbers[i];
-  }
+  Object.keys(numbers).forEach((number) => {
+    obj.value += (char[number] || "") + numbers[number];
+  });
 }
 
 phoneInput.addEventListener("keyup", () => {
