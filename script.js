@@ -17,6 +17,9 @@ const checkPhone = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/;
 
 const plans = document.getElementsByClassName("plan__option");
 
+const addOns = document.getElementsByClassName("add-ons__control")
+const addOnsCheck= document.getElementsByClassName("add-ons__control--checkbox")
+
 function hideSteps() {
   Object.keys(steps).forEach((step) => {
     steps[step].style.display = "none";
@@ -110,5 +113,15 @@ Object.keys(plans).forEach((plan => {
     setBorderColor(plan)
   };
 }))
+
+Object.keys(addOnsCheck).forEach((check) => {
+  addOnsCheck[check].onclick = () => {
+    if(addOnsCheck[check].checked) {
+      addOns[check].style.borderColor = "white"
+    } else {
+      addOns[check].style.borderColor = "black"
+    }
+  }
+})
 
 
