@@ -6,15 +6,9 @@ const nextStep = document.getElementsByClassName("btn--next-step")[0];
 const prevStep = document.getElementsByClassName("btn--go-back")[0];
 const confirmBtn = document.getElementsByClassName("btn--confirm")[0];
 
-const nameInput = document.getElementsByClassName(
-  "personal-info__controls--input"
-)[0];
-const emailInput = document.getElementsByClassName(
-  "personal-info__controls--input"
-)[1];
-const phoneInput = document.getElementsByClassName(
-  "personal-info__controls--input"
-)[2];
+const nameInput = document.getElementById("name")
+const emailInput = document.getElementById("email")
+const phoneInput = document.getElementById("phone")
 
 const checkName = /^(?!\s*$).+/;
 const checkEmail =

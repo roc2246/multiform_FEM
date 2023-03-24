@@ -204,6 +204,11 @@ width: 100%;
   grid-row: 2;
 }
 
+.plan__option:nth-child(2){
+  border: solid;
+  border-color: black;
+}
+
 .plan__toggle-box {
   display: flex;
   flex-direction: row;
