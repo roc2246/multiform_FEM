@@ -138,7 +138,7 @@ main {
   }
 }
 
-section:not(.step:nth-child(1)) {
+section:not(.step:nth-child(2)) {
   display: none;
 }
 
@@ -261,7 +261,7 @@ width: 100%;
   transition: 0.4s;
 }
 
-input:checked + .plan__toggle-box--round {
+input + .plan__toggle-box--round {
   background-color: #2196f3;
 }
 

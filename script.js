@@ -17,6 +17,15 @@ const checkPhone = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/;
 
 const plans = document.getElementsByClassName("plan__option");
 
+let arcadePrice = document.getElementsByClassName("plan__option--price")[0]
+let advancedPrice = document.getElementsByClassName("plan__option--price")[1]
+let proPrice = document.getElementsByClassName("plan__option--price")[2]
+let trial = document.getElementsByClassName("plan__option--trial")
+
+
+const toggleCont = document.getElementsByClassName("plan__toggle-box--toggle")[0]
+const payToggle = document.getElementsByClassName("plan__toggle-box--checkbox")[0]
+
 const addOns = document.getElementsByClassName("add-ons__control")
 const addOnsCheck= document.getElementsByClassName("add-ons__control--checkbox")
 
@@ -113,6 +122,24 @@ Object.keys(plans).forEach((plan => {
     setBorderColor(plan)
   };
 }))
+
+payToggle.onclick = () => {
+  if(!payToggle.checked) {
+    arcadePrice.innerHTML = "$9/mo"
+    advancedPrice.innerHTML = "$12/mo"
+    proPrice.innerHTML = "$15/mo"
+    Object.keys(trial).forEach((plan) => {
+      trial[plan].innerHTML = "&nbsp"
+    })
+  } else {
+    arcadePrice.innerHTML = "$90/yr"
+    advancedPrice.innerHTML = "$120/yr"
+    proPrice.innerHTML = "$150/yr"
+    Object.keys(trial).forEach((plan) => {
+      trial[plan].innerHTML = "2 months freee"
+    })
+  }
+}
 
 Object.keys(addOnsCheck).forEach((check) => {
   addOnsCheck[check].onclick = () => {
