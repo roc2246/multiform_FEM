@@ -33,6 +33,8 @@ let onlinePrice = document.getElementsByClassName("add-ons__control--price")[0]
 let storagePrice = document.getElementsByClassName("add-ons__control--price")[1]
 let profilePrice = document.getElementsByClassName("add-ons__control--price")[2]
 
+let totalPerSpan = document.getElementsByClassName("confirmation__total--heading")[0]
+
 function hideSteps() {
   Object.keys(steps).forEach((step) => {
     steps[step].style.display = "none";
@@ -135,6 +137,7 @@ payToggle.onclick = () => {
     onlinePrice.innerHTML = "+$1/mo"
     storagePrice.innerHTML = "+$2/mo"
     profilePrice.innerHTML = "+$2/mo"
+    totalPerSpan.innerHTML = "Total (per month)"
     Object.keys(trial).forEach((plan) => {
       trial[plan].innerHTML = "&nbsp"
     })
@@ -145,6 +148,7 @@ payToggle.onclick = () => {
     onlinePrice.innerHTML = "+$10/mo"
     storagePrice.innerHTML = "+$20/yr"
     profilePrice.innerHTML = "+$20/yr"
+    totalPerSpan.innerHTML = "Total (per year)"
     Object.keys(trial).forEach((plan) => {
       trial[plan].innerHTML = "2 months free"
     })
