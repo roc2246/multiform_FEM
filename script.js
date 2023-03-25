@@ -29,6 +29,10 @@ const payToggle = document.getElementsByClassName("plan__toggle-box--checkbox")[
 const addOns = document.getElementsByClassName("add-ons__control")
 const addOnsCheck= document.getElementsByClassName("add-ons__control--checkbox")
 
+let onlinePrice = document.getElementsByClassName("add-ons__control--price")[0]
+let storagePrice = document.getElementsByClassName("add-ons__control--price")[1]
+let profilePrice = document.getElementsByClassName("add-ons__control--price")[2]
+
 function hideSteps() {
   Object.keys(steps).forEach((step) => {
     steps[step].style.display = "none";
@@ -128,6 +132,9 @@ payToggle.onclick = () => {
     arcadePrice.innerHTML = "$9/mo"
     advancedPrice.innerHTML = "$12/mo"
     proPrice.innerHTML = "$15/mo"
+    onlinePrice.innerHTML = "+$1/mo"
+    storagePrice.innerHTML = "+$2/mo"
+    profilePrice.innerHTML = "+$2/mo"
     Object.keys(trial).forEach((plan) => {
       trial[plan].innerHTML = "&nbsp"
     })
@@ -135,8 +142,11 @@ payToggle.onclick = () => {
     arcadePrice.innerHTML = "$90/yr"
     advancedPrice.innerHTML = "$120/yr"
     proPrice.innerHTML = "$150/yr"
+    onlinePrice.innerHTML = "+$10/mo"
+    storagePrice.innerHTML = "+$20/yr"
+    profilePrice.innerHTML = "+$20/yr"
     Object.keys(trial).forEach((plan) => {
-      trial[plan].innerHTML = "2 months freee"
+      trial[plan].innerHTML = "2 months free"
     })
   }
 }
