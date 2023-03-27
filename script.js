@@ -17,29 +17,45 @@ const checkPhone = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/;
 
 const plans = document.getElementsByClassName("plan__option");
 
-let arcadePrice = document.getElementsByClassName("plan__option--price")[0]
-let advancedPrice = document.getElementsByClassName("plan__option--price")[1]
-let proPrice = document.getElementsByClassName("plan__option--price")[2]
-let trial = document.getElementsByClassName("plan__option--trial")
+let arcadePrice = document.getElementsByClassName("plan__option--price")[0];
+let advancedPrice = document.getElementsByClassName("plan__option--price")[1];
+let proPrice = document.getElementsByClassName("plan__option--price")[2];
+let trial = document.getElementsByClassName("plan__option--trial");
 
+const toggleCont = document.getElementsByClassName(
+  "plan__toggle-box--toggle"
+)[0];
+const payToggle = document.getElementsByClassName(
+  "plan__toggle-box--checkbox"
+)[0];
 
-const toggleCont = document.getElementsByClassName("plan__toggle-box--toggle")[0]
-const payToggle = document.getElementsByClassName("plan__toggle-box--checkbox")[0]
+const addOns = document.getElementsByClassName("add-ons__control");
+const addOnsName = document.getElementsByClassName("add-ons__control--type");
+const addOnsCheck = document.getElementsByClassName(
+  "add-ons__control--checkbox"
+);
+const addOnsPrice = document.getElementsByClassName("add-ons__control--price");
 
-const addOns = document.getElementsByClassName("add-ons__control")
-const addOnsCheck= document.getElementsByClassName("add-ons__control--checkbox")
+let onlinePrice = document.getElementsByClassName("add-ons__control--price")[0];
+let storagePrice = document.getElementsByClassName(
+  "add-ons__control--price"
+)[1];
+let profilePrice = document.getElementsByClassName(
+  "add-ons__control--price"
+)[2];
 
-let onlinePrice = document.getElementsByClassName("add-ons__control--price")[0]
-let storagePrice = document.getElementsByClassName("add-ons__control--price")[1]
-let profilePrice = document.getElementsByClassName("add-ons__control--price")[2]
+const planName = document.getElementsByClassName("plan__option--name");
+const chosenPlanPrice = document.getElementsByClassName("plan__option--price");
 
-const planName = document.getElementsByClassName("plan__option--name")
-const chosenPlanPrice = document.getElementsByClassName("plan__option--price")
+let selectedPlanName = document.getElementsByClassName("plan-name")[0];
+let selectedPlanPrice = document.getElementsByClassName("plan-price")[0];
 
-let selectedPlanName = document.getElementsByClassName("plan-name")[0]
-let selectedPlanPrice = document.getElementsByClassName("plan-price")[0]
+let selectedAddOnName = document.getElementsByClassName("add-on-name");
+let selectedAddOnPrice = document.getElementsByClassName("add-on-price");
 
-let totalPerSpan = document.getElementsByClassName("confirmation__total--heading")[0]
+let totalPerSpan = document.getElementsByClassName(
+  "confirmation__total--heading"
+)[0];
 
 function hideSteps() {
   Object.keys(steps).forEach((step) => {
@@ -53,9 +69,9 @@ function removeBorder() {
   });
 }
 
-function setBorderColor(no){
-  plans[no].style.borderStyle = "solid"
-  plans[no].style.borderColor = "black"
+function setBorderColor(no) {
+  plans[no].style.borderStyle = "solid";
+  plans[no].style.borderColor = "black";
 }
 
 function btnMgmt() {
@@ -127,53 +143,58 @@ confirmBtn.onclick = () => {
   confirmBtn.style.display = "none";
 };
 
-let planNo = 0
-Object.keys(plans).forEach((plan => {
+let planNo = 0;
+let addOnNo = 0
+Object.keys(plans).forEach((plan) => {
   plans[plan].onclick = () => {
     removeBorder();
-    setBorderColor(plan)
-    planNo = plan
-    selectedPlanName.innerHTML = planName[plan].innerHTML
-    selectedPlanPrice.innerHTML = chosenPlanPrice[plan].innerHTML
+    setBorderColor(plan);
+    planNo = plan;
+    selectedPlanName.innerHTML = planName[plan].innerHTML;
+    selectedPlanPrice.innerHTML = chosenPlanPrice[plan].innerHTML;
   };
-}))
+});
 
 payToggle.onclick = () => {
-  if(!payToggle.checked) {
-    arcadePrice.innerHTML = "$9/mo"
-    advancedPrice.innerHTML = "$12/mo"
-    proPrice.innerHTML = "$15/mo"
-    onlinePrice.innerHTML = "+$1/mo"
-    storagePrice.innerHTML = "+$2/mo"
-    profilePrice.innerHTML = "+$2/mo"
-    totalPerSpan.innerHTML = "Total (per month)"
-    selectedPlanPrice.innerHTML = chosenPlanPrice[planNo].innerHTML
+  if (!payToggle.checked) {
+    arcadePrice.innerHTML = "$9/mo";
+    advancedPrice.innerHTML = "$12/mo";
+    proPrice.innerHTML = "$15/mo";
+    onlinePrice.innerHTML = "+$1/mo";
+    storagePrice.innerHTML = "+$2/mo";
+    profilePrice.innerHTML = "+$2/mo";
+    totalPerSpan.innerHTML = "Total (per month)";
+    selectedPlanPrice.innerHTML = chosenPlanPrice[planNo].innerHTML;
+    selectedAddOnPrice[0].innerHTML = addOnsPrice[addOnNo].innerHTML;
     Object.keys(trial).forEach((plan) => {
-      trial[plan].innerHTML = "&nbsp"
-    })
+      trial[plan].innerHTML = "&nbsp";
+    });
   } else {
-    arcadePrice.innerHTML = "$90/yr"
-    advancedPrice.innerHTML = "$120/yr"
-    proPrice.innerHTML = "$150/yr"
-    onlinePrice.innerHTML = "+$10/mo"
-    storagePrice.innerHTML = "+$20/yr"
-    profilePrice.innerHTML = "+$20/yr"
-    totalPerSpan.innerHTML = "Total (per year)"
-    selectedPlanPrice.innerHTML = chosenPlanPrice[planNo].innerHTML
+    arcadePrice.innerHTML = "$90/yr";
+    advancedPrice.innerHTML = "$120/yr";
+    proPrice.innerHTML = "$150/yr";
+    onlinePrice.innerHTML = "+$10/yr";
+    storagePrice.innerHTML = "+$20/yr";
+    profilePrice.innerHTML = "+$20/yr";
+    totalPerSpan.innerHTML = "Total (per year)";
+    selectedPlanPrice.innerHTML = chosenPlanPrice[planNo].innerHTML;
+    selectedAddOnPrice[0].innerHTML = addOnsPrice[addOnNo].innerHTML;
+   console.log(addOnNo)
     Object.keys(trial).forEach((plan) => {
-      trial[plan].innerHTML = "2 months free"
-    })
+      trial[plan].innerHTML = "2 months free";
+    });
   }
-}
+};
 
 Object.keys(addOnsCheck).forEach((check) => {
   addOnsCheck[check].onclick = () => {
-    if(addOnsCheck[check].checked) {
-      addOns[check].style.borderColor = "white"
+    if (addOnsCheck[check].checked) {
+      addOnNo = check
+      addOns[check].style.borderColor = "white";
+      selectedAddOnName[0].innerHTML = addOnsName[check].innerHTML;
+      selectedAddOnPrice[0].innerHTML = addOnsPrice[check].innerHTML;
     } else {
-      addOns[check].style.borderColor = "black"
+      addOns[check].style.borderColor = "black";
     }
-  }
-})
-
-
+  };
+});
