@@ -1,4 +1,6 @@
 let stepNo = 0;
+let planNo = 0;
+let addOnNo = 0;
 
 const steps = document.getElementsByClassName("step");
 
@@ -20,7 +22,7 @@ const plans = document.getElementsByClassName("plan__option");
 let arcadePrice = document.getElementsByClassName("plan__option--price")[0];
 let advancedPrice = document.getElementsByClassName("plan__option--price")[1];
 let proPrice = document.getElementsByClassName("plan__option--price")[2];
-let trial = document.getElementsByClassName("plan__option--trial");
+let trialContainer = document.getElementsByClassName("plan__option--trial");
 
 const toggleCont = document.getElementsByClassName(
   "plan__toggle-box--toggle"
@@ -127,6 +129,34 @@ function stepIncrement(inc) {
   verify(checkPhone, phoneInput);
 }
 
+function setPrices(period) {
+  let zero;
+  let trialOffer
+  if(period === "yr"){
+    zero = "0"
+    trialOffer = "2 months free"
+  } else{
+    zero=""
+    trialOffer = "&nbsp"
+  } 
+  arcadePrice.innerHTML = `$9${zero}/${period}`;
+  advancedPrice.innerHTML = `$12${zero}/${period}`;
+  proPrice.innerHTML = `$15${zero}/${period}`;
+  onlinePrice.innerHTML = `+$1${zero}/${period}`;
+  storagePrice.innerHTML = `+$2${zero}/${period}`;
+  profilePrice.innerHTML = `+$2${zero}/${period}`;
+
+  Object.keys(trialContainer).forEach((trial) => {
+    trialContainer[trial].innerHTML = trialOffer;
+  });
+}
+
+function setCustomerOrder(period) {
+  totalPerSpan.innerHTML = `Total (per ${period})`;
+  selectedPlanPrice.innerHTML = chosenPlanPrice[planNo].innerHTML;
+  selectedAddOnPrice[0].innerHTML = addOnsPrice[addOnNo].innerHTML;
+}
+
 nextStep.onclick = () => {
   stepIncrement(1);
 };
@@ -143,8 +173,6 @@ confirmBtn.onclick = () => {
   confirmBtn.style.display = "none";
 };
 
-let planNo = 0;
-let addOnNo = 0
 Object.keys(plans).forEach((plan) => {
   plans[plan].onclick = () => {
     removeBorder();
@@ -157,39 +185,18 @@ Object.keys(plans).forEach((plan) => {
 
 payToggle.onclick = () => {
   if (!payToggle.checked) {
-    arcadePrice.innerHTML = "$9/mo";
-    advancedPrice.innerHTML = "$12/mo";
-    proPrice.innerHTML = "$15/mo";
-    onlinePrice.innerHTML = "+$1/mo";
-    storagePrice.innerHTML = "+$2/mo";
-    profilePrice.innerHTML = "+$2/mo";
-    totalPerSpan.innerHTML = "Total (per month)";
-    selectedPlanPrice.innerHTML = chosenPlanPrice[planNo].innerHTML;
-    selectedAddOnPrice[0].innerHTML = addOnsPrice[addOnNo].innerHTML;
-    Object.keys(trial).forEach((plan) => {
-      trial[plan].innerHTML = "&nbsp";
-    });
+    setPrices("mo");
+    setCustomerOrder("month");
   } else {
-    arcadePrice.innerHTML = "$90/yr";
-    advancedPrice.innerHTML = "$120/yr";
-    proPrice.innerHTML = "$150/yr";
-    onlinePrice.innerHTML = "+$10/yr";
-    storagePrice.innerHTML = "+$20/yr";
-    profilePrice.innerHTML = "+$20/yr";
-    totalPerSpan.innerHTML = "Total (per year)";
-    selectedPlanPrice.innerHTML = chosenPlanPrice[planNo].innerHTML;
-    selectedAddOnPrice[0].innerHTML = addOnsPrice[addOnNo].innerHTML;
-   console.log(addOnNo)
-    Object.keys(trial).forEach((plan) => {
-      trial[plan].innerHTML = "2 months free";
-    });
+    setPrices("yr");
+    setCustomerOrder("year");
   }
 };
 
 Object.keys(addOnsCheck).forEach((check) => {
   addOnsCheck[check].onclick = () => {
     if (addOnsCheck[check].checked) {
-      addOnNo = check
+      addOnNo = check;
       addOns[check].style.borderColor = "white";
       selectedAddOnName[0].innerHTML = addOnsName[check].innerHTML;
       selectedAddOnPrice[0].innerHTML = addOnsPrice[check].innerHTML;
