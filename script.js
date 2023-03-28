@@ -55,6 +55,10 @@ let selectedPlanPrice = document.getElementsByClassName("plan-price")[0];
 let selectedAddOnName = document.getElementsByClassName("add-on-name");
 let selectedAddOnPrice = document.getElementsByClassName("add-on-price");
 
+let orderedAddOns = document.getElementsByClassName(
+  "confirmation__orders--add-ons"
+)[0];
+
 let totalPerSpan = document.getElementsByClassName(
   "confirmation__total--heading"
 )[0];
@@ -131,21 +135,27 @@ function stepIncrement(inc) {
 
 function setPrices(period) {
   let zero;
-  let trialOffer
-  if(period === "yr"){
-    zero = "0"
-    trialOffer = "2 months free"
-    for(let x = 0; x < selectedAddOnPrice.length; x++) {
-      selectedAddOnPrice[x].innerHTML = selectedAddOnPrice[x].innerHTML.slice(0,3) + zero + selectedAddOnPrice[x].innerHTML.slice(3,4) + period
+  let trialOffer;
+  if (period === "yr") {
+    zero = "0";
+    trialOffer = "2 months free";
+    for (let x = 0; x < selectedAddOnPrice.length; x++) {
+      selectedAddOnPrice[x].innerHTML =
+        selectedAddOnPrice[x].innerHTML.slice(0, 3) +
+        zero +
+        selectedAddOnPrice[x].innerHTML.slice(3, 4) +
+        period;
     }
-  } else{
-    zero=""
-    trialOffer = "&nbsp"
-    for(let x = 0; x < selectedAddOnPrice.length; x++) {
-      selectedAddOnPrice[x].innerHTML = selectedAddOnPrice[x].innerHTML.slice(0,3) + selectedAddOnPrice[x].innerHTML.slice(4,5) + period
-   console.log(selectedAddOnPrice[x])
+  } else {
+    zero = "";
+    trialOffer = "&nbsp";
+    for (let x = 0; x < selectedAddOnPrice.length; x++) {
+      selectedAddOnPrice[x].innerHTML =
+        selectedAddOnPrice[x].innerHTML.slice(0, 3) +
+        selectedAddOnPrice[x].innerHTML.slice(4, 5) +
+        period;
     }
-  } 
+  }
   arcadePrice.innerHTML = `$9${zero}/${period}`;
   advancedPrice.innerHTML = `$12${zero}/${period}`;
   proPrice.innerHTML = `$15${zero}/${period}`;
@@ -156,6 +166,12 @@ function setPrices(period) {
   Object.keys(trialContainer).forEach((trial) => {
     trialContainer[trial].innerHTML = trialOffer;
   });
+}
+
+function addOnInfo(className) {
+  const addOnName = document.createElement("h4");
+  addOnName.className = className;
+  return addOnName;
 }
 
 function setCustomerOrder(period) {
@@ -200,27 +216,23 @@ payToggle.onclick = () => {
   }
 };
 
-function addOnInfo (className) {
-  const addOnName = document.createElement("h4")
-  addOnName.className = className
-  return addOnName
-}
-
 Object.keys(addOnsCheck).forEach((check) => {
-  let newAddOnName = addOnInfo("add-on-name")
-  let newAddOnPrice = addOnInfo("add-on-price")
+  const addOnContainer = document.createElement("div");
+  addOnContainer.className = "confirmation__orders--add-on";
+  let newAddOnName = addOnInfo("add-on-name");
+  let newAddOnPrice = addOnInfo("add-on-price");
   addOnsCheck[check].onclick = () => {
     if (addOnsCheck[check].checked) {
-      newAddOnName.innerHTML = addOnsName[check].innerHTML
-      newAddOnPrice.innerHTML = addOnsPrice[check].innerHTML
-      document.getElementsByClassName("confirmation__orders--add-ons")[0].appendChild(newAddOnName)
-      document.getElementsByClassName("confirmation__orders--add-ons")[0].appendChild(newAddOnPrice)
+      newAddOnName.innerHTML = addOnsName[check].innerHTML;
+      newAddOnPrice.innerHTML = addOnsPrice[check].innerHTML;
+      orderedAddOns.appendChild(addOnContainer);
+      addOnContainer.appendChild(newAddOnName);
+      addOnContainer.appendChild(newAddOnPrice);
       addOnNo = check;
       addOns[check].style.borderColor = "white";
     } else {
       addOns[check].style.borderColor = "black";
-      newAddOnName.remove()
-      newAddOnPrice.remove()
+      addOnContainer.remove();
     }
   };
 });
