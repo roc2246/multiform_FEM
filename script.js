@@ -135,9 +135,16 @@ function setPrices(period) {
   if(period === "yr"){
     zero = "0"
     trialOffer = "2 months free"
+    for(let x = 0; x < selectedAddOnPrice.length; x++) {
+      selectedAddOnPrice[x].innerHTML = selectedAddOnPrice[x].innerHTML.slice(0,3) + zero + selectedAddOnPrice[x].innerHTML.slice(3,4) + period
+    }
   } else{
     zero=""
     trialOffer = "&nbsp"
+    for(let x = 0; x < selectedAddOnPrice.length; x++) {
+      selectedAddOnPrice[x].innerHTML = selectedAddOnPrice[x].innerHTML.slice(0,3) + selectedAddOnPrice[x].innerHTML.slice(4,5) + period
+   console.log(selectedAddOnPrice[x])
+    }
   } 
   arcadePrice.innerHTML = `$9${zero}/${period}`;
   advancedPrice.innerHTML = `$12${zero}/${period}`;
@@ -154,7 +161,7 @@ function setPrices(period) {
 function setCustomerOrder(period) {
   totalPerSpan.innerHTML = `Total (per ${period})`;
   selectedPlanPrice.innerHTML = chosenPlanPrice[planNo].innerHTML;
-  selectedAddOnPrice[0].innerHTML = addOnsPrice[addOnNo].innerHTML;
+  selectedAddOnPrice.innerHTML = addOnsPrice[addOnNo].innerHTML;
 }
 
 nextStep.onclick = () => {
@@ -193,15 +200,27 @@ payToggle.onclick = () => {
   }
 };
 
+function addOnInfo (className) {
+  const addOnName = document.createElement("h4")
+  addOnName.className = className
+  return addOnName
+}
+
 Object.keys(addOnsCheck).forEach((check) => {
+  let newAddOnName = addOnInfo("add-on-name")
+  let newAddOnPrice = addOnInfo("add-on-price")
   addOnsCheck[check].onclick = () => {
     if (addOnsCheck[check].checked) {
+      newAddOnName.innerHTML = addOnsName[check].innerHTML
+      newAddOnPrice.innerHTML = addOnsPrice[check].innerHTML
+      document.getElementsByClassName("confirmation__orders--add-ons")[0].appendChild(newAddOnName)
+      document.getElementsByClassName("confirmation__orders--add-ons")[0].appendChild(newAddOnPrice)
       addOnNo = check;
       addOns[check].style.borderColor = "white";
-      selectedAddOnName[0].innerHTML = addOnsName[check].innerHTML;
-      selectedAddOnPrice[0].innerHTML = addOnsPrice[check].innerHTML;
     } else {
       addOns[check].style.borderColor = "black";
+      newAddOnName.remove()
+      newAddOnPrice.remove()
     }
   };
 });
