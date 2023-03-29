@@ -180,8 +180,31 @@ function setCustomerOrder(period) {
   selectedAddOnPrice.innerHTML = addOnsPrice[addOnNo].innerHTML;
 }
 
+function setInteger(int) {
+  if (int.innerHTML.includes("+")) {
+    int = int.innerHTML.slice(2, 3);
+  }else if (!int.innerHTML.includes("+")) {
+    int = int.innerHTML.slice(2, 3);
+  }
+  parseInt(int);
+  return int;
+}
+
+function calcTotal() {
+  const intPlanPrice = setInteger(selectedPlanPrice);
+  let addOnPrices = [];
+    for (let x = 0; x < selectedAddOnPrice.length; x++) {
+    addOnPrices = [...addOnPrices, setInteger(selectedAddOnPrice[x])];
+  }
+  console.log(intPlanPrice)
+  console.log(addOnPrices)
+}
+
 nextStep.onclick = () => {
   stepIncrement(1);
+  if (stepNo === 3) {
+    calcTotal();
+  }
 };
 
 prevStep.onclick = () => {
