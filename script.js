@@ -180,21 +180,20 @@ function setCustomerOrder(period) {
   selectedAddOnPrice.innerHTML = addOnsPrice[addOnNo].innerHTML;
 }
 
-
 function setInteger(int) {
   if (int.innerHTML.includes("+")) {
-    if(int.innerHTML.length < 7){
+    if (int.innerHTML.length < 7) {
       int = int.innerHTML.slice(2, 3);
-    }else if(int.innerHTML.length >= 7){
+    } else if (int.innerHTML.length >= 7) {
       int = int.innerHTML.slice(2, 4);
     }
-  }else if (!int.innerHTML.includes("+")) {
-    if(int.innerHTML.length < 7 && int.innerHTML.length > 5){
+  } else if (!int.innerHTML.includes("+")) {
+    if (int.innerHTML.length < 7 && int.innerHTML.length > 5) {
       int = int.innerHTML.slice(1, 3);
-    }else if(int.innerHTML.length >= 7){
+    } else if (int.innerHTML.length >= 7) {
       int = int.innerHTML.slice(1, 4);
-    } else if(int.innerHTML.length <= 5) {
-      int = int.innerHTML.slice(1,2);
+    } else if (int.innerHTML.length <= 5) {
+      int = int.innerHTML.slice(1, 2);
     }
   }
   parseInt(int);
@@ -204,11 +203,14 @@ function setInteger(int) {
 function calcTotal() {
   const intPlanPrice = setInteger(selectedPlanPrice);
   let addOnPrices = [];
-    for (let x = 0; x < selectedAddOnPrice.length; x++) {
+  let totalPrice;
+  let totalAddonPrices = 0
+  for (let x = 0; x < selectedAddOnPrice.length; x++) {
     addOnPrices = [...addOnPrices, setInteger(selectedAddOnPrice[x])];
+    totalAddonPrices += parseInt(addOnPrices[x]);
+    totalPrice = parseInt(intPlanPrice) + totalAddonPrices;
   }
-  console.log(intPlanPrice)
-  console.log(addOnPrices)
+  console.log(totalPrice)
 }
 
 nextStep.onclick = () => {
