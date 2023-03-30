@@ -1,6 +1,7 @@
 let stepNo = 0;
 let planNo = 0;
 let addOnNo = 0;
+let timeSpan;
 
 const steps = document.getElementsByClassName("step");
 
@@ -61,6 +62,10 @@ let orderedAddOns = document.getElementsByClassName(
 
 let totalPerSpan = document.getElementsByClassName(
   "confirmation__total--heading"
+)[0];
+
+let grandTotal = document.getElementsByClassName(
+  "confirmation__total--price"
 )[0];
 
 function hideSteps() {
@@ -137,6 +142,7 @@ function setPrices(period) {
   let zero;
   let trialOffer;
   if (period === "yr") {
+    timeSpan = "yr"
     zero = "0";
     trialOffer = "2 months free";
     for (let x = 0; x < selectedAddOnPrice.length; x++) {
@@ -147,6 +153,7 @@ function setPrices(period) {
         period;
     }
   } else {
+    timeSpan = "mo"
     zero = "";
     trialOffer = "&nbsp";
     for (let x = 0; x < selectedAddOnPrice.length; x++) {
@@ -208,15 +215,21 @@ function calcTotal() {
   for (let x = 0; x < selectedAddOnPrice.length; x++) {
     addOnPrices = [...addOnPrices, setInteger(selectedAddOnPrice[x])];
     totalAddonPrices += parseInt(addOnPrices[x]);
-    totalPrice = parseInt(intPlanPrice) + totalAddonPrices;
   }
-  console.log(totalPrice)
+  if (totalAddonPrices !== 0){
+    console.log(addOnPrices.length)
+    totalPrice = parseInt(intPlanPrice) + totalAddonPrices 
+  } else {
+    totalPrice = parseInt(intPlanPrice)
+  } 
+
+  return totalPrice
 }
 
 nextStep.onclick = () => {
   stepIncrement(1);
   if (stepNo === 3) {
-    calcTotal();
+    grandTotal.innerHTML = `+$${calcTotal()}/${timeSpan}`;
   }
 };
 
