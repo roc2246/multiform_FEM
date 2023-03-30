@@ -53,6 +53,8 @@ const chosenPlanPrice = document.getElementsByClassName("plan__option--price");
 let selectedPlanName = document.getElementsByClassName("plan-name")[0];
 let selectedPlanPrice = document.getElementsByClassName("plan-price")[0];
 
+const changeOrder = document.getElementsByClassName("change-plan")[0]
+
 let selectedAddOnName = document.getElementsByClassName("add-on-name");
 let selectedAddOnPrice = document.getElementsByClassName("add-on-price");
 
@@ -236,6 +238,14 @@ nextStep.onclick = () => {
 prevStep.onclick = () => {
   stepIncrement(-1);
 };
+
+changeOrder.onclick = () => {
+  hideSteps()
+  stepNo = 1
+  steps[stepNo].style.display = "block"
+  confirmBtn.style.display = "none"
+  nextStep.style.display = "inline-block"
+}
 
 confirmBtn.onclick = () => {
   hideSteps();
