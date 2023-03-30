@@ -1,7 +1,7 @@
 let stepNo = 0;
 let planNo = 0;
 let addOnNo = 0;
-let timeSpan;
+let timeSpan = "mo";
 
 const steps = document.getElementsByClassName("step");
 
