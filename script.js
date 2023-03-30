@@ -180,11 +180,22 @@ function setCustomerOrder(period) {
   selectedAddOnPrice.innerHTML = addOnsPrice[addOnNo].innerHTML;
 }
 
+
 function setInteger(int) {
   if (int.innerHTML.includes("+")) {
-    int = int.innerHTML.slice(2, 3);
+    if(int.innerHTML.length < 7){
+      int = int.innerHTML.slice(2, 3);
+    }else if(int.innerHTML.length >= 7){
+      int = int.innerHTML.slice(2, 4);
+    }
   }else if (!int.innerHTML.includes("+")) {
-    int = int.innerHTML.slice(2, 3);
+    if(int.innerHTML.length < 7 && int.innerHTML.length > 5){
+      int = int.innerHTML.slice(1, 3);
+    }else if(int.innerHTML.length >= 7){
+      int = int.innerHTML.slice(1, 4);
+    } else if(int.innerHTML.length <= 5) {
+      int = int.innerHTML.slice(1,2);
+    }
   }
   parseInt(int);
   return int;
