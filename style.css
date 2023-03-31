@@ -315,6 +315,49 @@ input:checked + .plan__toggle-box--round:before {
 }
 
 /* Summary */
+.confirmation__orders--plan{
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: space-between;
+}
+
+.plan-name{
+  margin: 0;
+}
+
+.plan-price{
+  position: absolute;
+  grid-column: 3/4;
+  margin-top: .5rem;
+  margin-left: -2.6rem;
+}
+
+.change-plan{
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+
+.confirmation__orders--add-on{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.add-on-name{
+  margin: 0;
+}
+
+.add-on-price{
+  margin: 0;
+}
+
+.confirmation__total{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
 /* Thank You */
 .thank-you {
