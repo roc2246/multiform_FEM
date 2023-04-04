@@ -131,7 +131,14 @@ function stepIncrement(inc) {
   ) {
     hideSteps();
     stepNo += inc;
-    steps[stepNo].style.display = "block";
+    console.log(stepNo)
+    if(stepNo=== 1){
+      steps[stepNo].style.display = "grid";
+    } else if(stepNo === 0  || stepNo === 3){
+      steps[stepNo].style.display = "block";
+    }else if (stepNo === 2){
+      steps[stepNo].style.display = "flex";
+    }
     btnMgmt();
   }
 
