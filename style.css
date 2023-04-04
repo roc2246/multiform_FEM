@@ -560,6 +560,14 @@ input:checked + .plan__toggle-box--round:before {
   color: var(--marine-blue);
 }
 
+@media (max-width: 375px) {
+  .thank-you{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  
+}
+
 .thank-you__img-box,
 .thank-you__heading {
   margin-left: auto;
