@@ -1,19 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Ubuntu&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Ubuntu&display=swap");
 
 :root {
---marine-blue: hsl(213, 96%, 18%);
---purpleish-blue: hsl(243, 100%, 62%);
---pastel-blue: hsl(228, 100%, 84%);
---light-blue: hsl(206, 94%, 87%);
---strawberry-red: hsl(354, 84%, 57%);
+  --marine-blue: hsl(213, 96%, 18%);
+  --purpleish-blue: hsl(243, 100%, 62%);
+  --pastel-blue: hsl(228, 100%, 84%);
+  --light-blue: hsl(206, 94%, 87%);
+  --strawberry-red: hsl(354, 84%, 57%);
 
---bold: 500;
---bolder: 700;
+  --bold: 500;
+  --bolder: 700;
 }
 
 html {
   font-size: 16px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
 @media (max-width: 480px) {
@@ -32,12 +32,11 @@ body {
   background-color: var(--light-blue);
 }
 
-@media (max-width: 480px) 
-{
- body{
-  display: block;
-  height: 100%;
- } 
+@media (max-width: 480px) {
+  body {
+    display: block;
+    height: 100%;
+  }
 }
 
 main {
@@ -45,8 +44,11 @@ main {
   grid-template-columns: repeat(2, auto);
   column-gap: 4rem;
 
-  max-width: 80rem;
+  width: auto;
   background-color: white;
+  padding: 0.75rem;
+  border-radius: .5rem;
+
 }
 
 @media (max-width: 480px) {
@@ -55,7 +57,7 @@ main {
     flex-direction: column;
     height: 100%;
     position: relative;
-  background-color: var(--light-blue);
+    background-color: var(--light-blue);
   }
 }
 
@@ -64,10 +66,11 @@ main {
   grid-column: 1;
   grid-row: 1/3;
 
-  width: 20rem;
+  width: 13rem;
   padding: 2rem;
 
   background-image: url("./assets/images/bg-sidebar-desktop.svg");
+border-radius: .5rem;
 }
 
 @media (max-width: 480px) {
@@ -82,7 +85,7 @@ main {
     height: 12rem;
     padding: 0;
 
-  background-image: url("./assets/images/bg-sidebar-mobile.svg");
+    background-image: url("./assets/images/bg-sidebar-mobile.svg");
   }
 }
 
@@ -110,7 +113,7 @@ main {
 
   width: 2rem;
   height: 2rem;
-  
+
   color: white;
 }
 
@@ -142,15 +145,20 @@ main {
   grid-column: 2;
   grid-row: 1/2;
 
-  height: 40rem;
+  height: 30rem;
   background-color: white;
+  margin-right: 4rem;
 }
 
-.heading--primary{
+.heading{
+  margin-bottom: 2rem;
+}
+
+.heading--primary {
   color: var(--marine-blue);
 }
 
-.heading--secondary{
+.heading--secondary {
   color: grey;
   font-size: 1rem;
 }
@@ -167,8 +175,6 @@ main {
 
     border-radius: 0.5rem;
     height: auto;
-
-
   }
 }
 
@@ -176,20 +182,20 @@ section:not(.step:nth-child(1)) {
   display: none;
 }
 
-
-
 .btn-box {
   grid-column: 2;
   grid-row: 2/3;
 
   background-color: white;
   height: 4rem;
+  margin-right: 4rem;
 }
 
 .btn {
   height: 2.5rem;
   width: 6rem;
   cursor: pointer;
+  border-radius: .2rem;
 }
 
 .btn--go-back {
@@ -197,7 +203,7 @@ section:not(.step:nth-child(1)) {
   display: none;
   border: none;
   background-color: white;
-  color: grey ;
+  color: grey;
 }
 
 .btn--next-step {
@@ -213,12 +219,11 @@ section:not(.step:nth-child(1)) {
   color: white;
 }
 
-@media(max-width: 480px) {
+@media (max-width: 480px) {
   .btn-box {
-
-position: absolute;
-bottom: 0;
-width: 100%;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
   }
 }
 
@@ -231,9 +236,10 @@ width: 100%;
 }
 
 /* Personal Info */
-.personal-info__controls--label{
+.personal-info__controls--label {
   color: var(--marine-blue);
   font-weight: var(--bolder);
+  margin-bottom: 2rem;
 }
 
 .personal-info__controls--input {
@@ -241,11 +247,15 @@ width: 100%;
   height: 2rem;
 
   margin-bottom: 1rem;
+  margin-top: .5rem;
+  border-color: rgb(184, 181, 181);
+  border-radius: .5rem;
+  border-style: solid;
 }
 
 ::placeholder {
-font-weight: var(--bolder);
-color: rgb(170, 169, 169);
+  font-weight: var(--bolder);
+  color: rgb(170, 169, 169);
 }
 
 /* Plan */
@@ -263,18 +273,18 @@ color: rgb(170, 169, 169);
   grid-row: 2;
 }
 
-.plan__option--name{
+.plan__option--name {
   color: var(--marine-blue);
 }
 
-.plan__option:nth-child(2){
+.plan__option:nth-child(2) {
   border: solid;
   border-color: black;
 }
 
-.plan__option--price{
+.plan__option--price {
   color: grey;
-  font-size: .75rem;
+  font-size: 0.75rem;
 }
 
 .plan__toggle-box {
@@ -390,65 +400,63 @@ input:checked + .plan__toggle-box--round:before {
 }
 
 /* Summary */
-.confirmation__orders--plan{
+.confirmation__orders--plan {
   position: relative;
   display: grid;
   grid-template-columns: repeat(3, auto);
   justify-content: space-between;
 }
 
-.plan-name{
+.plan-name {
   margin: 0;
   color: var(--marine-blue);
 }
 
-.plan-price{
+.plan-price {
   position: absolute;
   grid-column: 3/4;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   margin-left: -2.6rem;
   color: var(--marine-blue);
-
 }
 
-.change-plan{
+.change-plan {
   grid-column: 1/2;
   grid-row: 2/3;
   color: grey;
 }
 
-.change-plan:visited{
+.change-plan:visited {
   color: grey;
 }
 
-
-.confirmation__orders--add-on{
+.confirmation__orders--add-on {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.add-on-name{
+.add-on-name {
   margin: 0;
   color: grey;
 }
 
-.add-on-price{
+.add-on-price {
   margin: 0;
   color: var(--marine-blue);
 }
 
-.confirmation__total{
+.confirmation__total {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.confirmation__total--heading{
+.confirmation__total--heading {
   color: grey;
 }
 
-.confirmation__total--price{
+.confirmation__total--price {
   color: var(--marine-blue);
 }
 
@@ -472,7 +480,7 @@ input:checked + .plan__toggle-box--round:before {
   color: grey;
 }
 
-.thank-you__paragraph--mailto{
+.thank-you__paragraph--mailto {
   color: grey;
   text-decoration: none;
 }
