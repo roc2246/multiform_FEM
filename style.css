@@ -315,7 +315,12 @@ section:not(.step:nth-child(1)) {
 
 .plan__toggle-box--option {
   margin-top: 0.5rem;
+  color: grey;
+}
+
+.plan__toggle-box--option:nth-child(1){
   color: var(--marine-blue);
+
 }
 
 /* Toggle Switch */

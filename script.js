@@ -31,6 +31,7 @@ const toggleCont = document.getElementsByClassName(
 const payToggle = document.getElementsByClassName(
   "plan__toggle-box--checkbox"
 )[0];
+const toggleOption = document.getElementsByClassName("plan__toggle-box--option")
 
 const addOns = document.getElementsByClassName("add-ons__control");
 const addOnsName = document.getElementsByClassName("add-ons__control--type");
@@ -276,9 +277,14 @@ payToggle.onclick = () => {
   if (!payToggle.checked) {
     setPrices("mo");
     setCustomerOrder("month");
+    toggleOption[0].style.color = "hsl(213, 96%, 18%)"
+    toggleOption[1].style.color = "grey"
   } else {
     setPrices("yr");
     setCustomerOrder("year");
+    toggleOption[1].style.color = "hsl(213, 96%, 18%)"
+    toggleOption[0].style.color = "grey"
+
   }
 };
 
