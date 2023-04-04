@@ -151,6 +151,14 @@ border-radius: .5rem;
   width: 30rem;
 }
 
+@media (max-width: 480px) {
+  .step {
+    width: 25rem;
+    height: auto;
+  }
+}
+
+
 .heading{
   margin-bottom: 2rem;
 }
