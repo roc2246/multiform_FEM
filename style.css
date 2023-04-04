@@ -41,8 +41,8 @@ body {
 
 main {
   display: grid;
-  grid-template-columns: repeat(2, auto);
-  column-gap: 4rem;
+  grid-template-columns: 17rem auto 0rem;
+  column-gap: 8rem;
 
   width: max(50%, 60rem);
 
@@ -148,8 +148,9 @@ border-radius: .5rem;
   grid-row: 1/2;
 
   height: 30rem;
+  width: 100%;
   background-color: white;
-  margin-right: 4rem;
+  
 }
 
 @media (max-width: 480px) {
@@ -191,7 +192,7 @@ section:not(.step:nth-child(1)) {
 
   background-color: white;
   height: 4rem;
-  margin-right: 4rem;
+ 
 }
 
 .btn {
@@ -266,6 +267,7 @@ section:not(.step:nth-child(1)) {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 7rem repeat(3, auto);
+  column-gap: 1rem;
 }
 
 .plan .heading {
@@ -276,16 +278,14 @@ section:not(.step:nth-child(1)) {
 .plan__option {
   grid-row: 2;
   height: 10rem;
+  width: 6rem;
   border: solid;
   border-color: grey;
   border-radius: .5rem;
   padding: 1rem;
 }
 
-.plan__option:nth-child(3){
-margin-left: 1rem;
-margin-right: 1rem;
-}
+
 
 .plan__option--name {
   color: var(--marine-blue);

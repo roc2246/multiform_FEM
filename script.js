@@ -249,7 +249,7 @@ prevStep.onclick = () => {
 changeOrder.onclick = () => {
   hideSteps()
   stepNo = 1
-  steps[stepNo].style.display = "block"
+  steps[stepNo].style.display = "grid"
   confirmBtn.style.display = "none"
   nextStep.style.display = "inline-block"
 }
