@@ -275,7 +275,7 @@ section:not(.step:nth-child(1)) {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: none;
-    column-gap: normal;
+    row-gap: 1rem;
   }
 }
 
@@ -303,11 +303,12 @@ section:not(.step:nth-child(1)) {
   .plan__option {
     display: grid;
     grid-template-columns: 2.5rem auto;
-    width: 100%;
-    height: auto;
+    column-gap: .5rem;
+    max-width: 100%;
+    height: 3.5rem;
   }
 
-  .plan__option:nth-child(2) {
+  .plan__option:nth-child(3) {
     grid-column: 1;
     grid-row: 3;
   }
@@ -316,12 +317,17 @@ section:not(.step:nth-child(1)) {
     grid-column: 1;
     grid-row: 4;
   }
+  
+  .plan__option:nth-child(5) {
+    grid-column: 1;
+    grid-row: 4;
+  }
 }
 
 @media (max-width: 375px) {
   .plan__option---img-box {
     grid-column: 1;
-    grid-row: 1/2;
+    grid-row: 1/3;
   }
 }
 
