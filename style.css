@@ -42,7 +42,7 @@ body {
 main {
   display: grid;
   grid-template-columns: 17rem auto 0rem;
-  column-gap: 8rem;
+  column-gap: 4rem;
 
   width: max(50%, 60rem);
 
@@ -148,6 +148,7 @@ border-radius: .5rem;
   grid-row: 1/2;
 
   height: 30rem;
+  margin-left: .75rem;
   width: 100%;
   background-color: white;
   
@@ -240,6 +241,7 @@ section:not(.step:nth-child(1)) {
 }
 
 /* Personal Info */
+
 .personal-info__controls--label {
   color: var(--marine-blue);
   font-weight: var(--bolder);
@@ -278,17 +280,15 @@ section:not(.step:nth-child(1)) {
 .plan__option {
   grid-row: 2;
   height: 10rem;
-  width: 6rem;
   border: solid;
   border-color: grey;
   border-radius: .5rem;
   padding: 1rem;
 }
 
-
-
 .plan__option--name {
   color: var(--marine-blue);
+  word-break: break-all;
 }
 
 .plan__option:nth-child(2) {
@@ -299,6 +299,7 @@ section:not(.step:nth-child(1)) {
 .plan__option--price {
   color: grey;
   font-size: 0.75rem;
+  word-break: break-all;
 }
 
 .plan__toggle-box {
@@ -437,7 +438,7 @@ input:checked + .plan__toggle-box--round:before {
   position: absolute;
   grid-column: 3/4;
   margin-top: 0.5rem;
-  margin-left: -2.6rem;
+  margin-left: -3.5rem;
   color: var(--marine-blue);
 }
 
