@@ -78,7 +78,7 @@ function hideSteps() {
 
 function removeBorder() {
   Object.keys(plans).forEach((plan) => {
-    plans[plan].style.borderStyle = "none";
+    plans[plan].style.borderColor = "grey";
   });
 }
 

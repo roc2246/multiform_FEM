@@ -282,6 +282,10 @@ section:not(.step:nth-child(1)) {
 .plan__option {
   grid-row: 2;
   height: 10rem;
+  border: solid;
+  border-color: grey;
+  border-radius: .5rem;
+  padding: 1rem;
 }
 
 .plan__option:nth-child(3){
