@@ -81,7 +81,7 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     flex-wrap: wrap;
 
     width: 100%;
@@ -101,6 +101,13 @@ main {
   margin-bottom: 2rem;
 }
 
+@media (max-width: 375px) {
+  .sidebar__step {
+    margin-top: 2rem;
+  }
+  
+}
+
 .sidebar__step--no {
   display: flex;
   justify-content: center;
@@ -114,6 +121,9 @@ main {
 
   border-radius: 50%;
   border: solid;
+  border-width: .05rem;
+
+  font-weight: 100;
 
   width: 2rem;
   height: 2rem;
@@ -127,6 +137,7 @@ main {
 
   margin: 0;
   color: var(--pastel-blue);
+  font-weight: 100;
 }
 
 .sidebar__step--primary {
@@ -135,6 +146,7 @@ main {
 
   margin: 0;
   color: white;
+  font-weight: 550;
 }
 
 @media (max-width: 375px) {
