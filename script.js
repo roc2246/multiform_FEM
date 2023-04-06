@@ -81,18 +81,18 @@ function hideSteps() {
   });
 }
 
-function resetStepNoStyle (){
+function resetStepNoStyle() {
   Object.keys(sidebarStepNo).forEach((no) => {
     sidebarStepNo[no].style.display = "flex";
-    sidebarStepNo[no].style.border= "solid";
-    sidebarStepNo[no].style.borderRadius= "50%";
-    sidebarStepNo[no].style.borderWidth= ".05rem";
+    sidebarStepNo[no].style.border = "solid";
+    sidebarStepNo[no].style.borderRadius = "50%";
+    sidebarStepNo[no].style.borderWidth = ".05rem";
     sidebarStepNo[no].style.color = "white";
     sidebarStepNo[no].style.backgroundColor = null;
   });
 }
 
-function setStepNoStyle () {
+function setStepNoStyle() {
   sidebarStepNo[stepNo].style.backgroundColor = "hsl(206, 94%, 87%)";
   sidebarStepNo[stepNo].style.border = "none";
   sidebarStepNo[stepNo].style.color = "black";
@@ -153,8 +153,8 @@ function stepIncrement(inc) {
   ) {
     hideSteps();
     stepNo += inc;
-    resetStepNoStyle()
-   setStepNoStyle()
+    resetStepNoStyle();
+    setStepNoStyle();
     if (stepNo === 1) {
       steps[stepNo].style.display = "grid";
     } else if (stepNo === 0 || stepNo === 3) {
@@ -262,7 +262,7 @@ window.onload = () => {
   sidebarStepNo[0].style.backgroundColor = "hsl(206, 94%, 87%)";
   sidebarStepNo[0].style.border = "none";
   sidebarStepNo[0].style.color = "black";
-}
+};
 
 nextStep.onclick = () => {
   stepIncrement(1);
