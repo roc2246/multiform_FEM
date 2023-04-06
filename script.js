@@ -9,6 +9,8 @@ const nextStep = document.getElementsByClassName("btn--next-step")[0];
 const prevStep = document.getElementsByClassName("btn--go-back")[0];
 const confirmBtn = document.getElementsByClassName("btn--confirm")[0];
 
+const sidebarStepNo = document.getElementsByClassName("sidebar__step--no");
+
 const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
 const phoneInput = document.getElementById("phone");
@@ -31,7 +33,9 @@ const toggleCont = document.getElementsByClassName(
 const payToggle = document.getElementsByClassName(
   "plan__toggle-box--checkbox"
 )[0];
-const toggleOption = document.getElementsByClassName("plan__toggle-box--option")
+const toggleOption = document.getElementsByClassName(
+  "plan__toggle-box--option"
+);
 
 const addOns = document.getElementsByClassName("add-ons__control");
 const addOnsName = document.getElementsByClassName("add-ons__control--type");
@@ -54,7 +58,7 @@ const chosenPlanPrice = document.getElementsByClassName("plan__option--price");
 let selectedPlanName = document.getElementsByClassName("plan-name")[0];
 let selectedPlanPrice = document.getElementsByClassName("plan-price")[0];
 
-const changeOrder = document.getElementsByClassName("change-plan")[0]
+const changeOrder = document.getElementsByClassName("change-plan")[0];
 
 let selectedAddOnName = document.getElementsByClassName("add-on-name");
 let selectedAddOnPrice = document.getElementsByClassName("add-on-price");
@@ -75,6 +79,23 @@ function hideSteps() {
   Object.keys(steps).forEach((step) => {
     steps[step].style.display = "none";
   });
+}
+
+function resetStepNoStyle (){
+  Object.keys(sidebarStepNo).forEach((no) => {
+    sidebarStepNo[no].style.display = "flex";
+    sidebarStepNo[no].style.border= "solid";
+    sidebarStepNo[no].style.borderRadius= "50%";
+    sidebarStepNo[no].style.borderWidth= ".05rem";
+    sidebarStepNo[no].style.color = "white";
+    sidebarStepNo[no].style.backgroundColor = null;
+  });
+}
+
+function setStepNoStyle () {
+  sidebarStepNo[stepNo].style.backgroundColor = "hsl(206, 94%, 87%)";
+  sidebarStepNo[stepNo].style.border = "none";
+  sidebarStepNo[stepNo].style.color = "black";
 }
 
 function removeBorder() {
@@ -132,12 +153,13 @@ function stepIncrement(inc) {
   ) {
     hideSteps();
     stepNo += inc;
-    console.log(stepNo)
-    if(stepNo=== 1){
+    resetStepNoStyle()
+   setStepNoStyle()
+    if (stepNo === 1) {
       steps[stepNo].style.display = "grid";
-    } else if(stepNo === 0  || stepNo === 3){
+    } else if (stepNo === 0 || stepNo === 3) {
       steps[stepNo].style.display = "block";
-    }else if (stepNo === 2){
+    } else if (stepNo === 2) {
       steps[stepNo].style.display = "flex";
     }
     btnMgmt();
@@ -152,7 +174,7 @@ function setPrices(period) {
   let zero;
   let trialOffer;
   if (period === "yr") {
-    timeSpan = "yr"
+    timeSpan = "yr";
     zero = "0";
     trialOffer = "2 months free";
     for (let x = 0; x < selectedAddOnPrice.length; x++) {
@@ -163,7 +185,7 @@ function setPrices(period) {
         period;
     }
   } else {
-    timeSpan = "mo"
+    timeSpan = "mo";
     zero = "";
     trialOffer = "&nbsp";
     for (let x = 0; x < selectedAddOnPrice.length; x++) {
@@ -221,19 +243,25 @@ function calcTotal() {
   const intPlanPrice = setInteger(selectedPlanPrice);
   let addOnPrices = [];
   let totalPrice;
-  let totalAddonPrices = 0
+  let totalAddonPrices = 0;
   for (let x = 0; x < selectedAddOnPrice.length; x++) {
     addOnPrices = [...addOnPrices, setInteger(selectedAddOnPrice[x])];
     totalAddonPrices += parseInt(addOnPrices[x]);
   }
-  if (totalAddonPrices !== 0){
-    console.log(addOnPrices.length)
-    totalPrice = parseInt(intPlanPrice) + totalAddonPrices 
+  if (totalAddonPrices !== 0) {
+    console.log(addOnPrices.length);
+    totalPrice = parseInt(intPlanPrice) + totalAddonPrices;
   } else {
-    totalPrice = parseInt(intPlanPrice)
-  } 
+    totalPrice = parseInt(intPlanPrice);
+  }
 
-  return totalPrice
+  return totalPrice;
+}
+
+window.onload = () => {
+  sidebarStepNo[0].style.backgroundColor = "hsl(206, 94%, 87%)";
+  sidebarStepNo[0].style.border = "none";
+  sidebarStepNo[0].style.color = "black";
 }
 
 nextStep.onclick = () => {
@@ -248,12 +276,12 @@ prevStep.onclick = () => {
 };
 
 changeOrder.onclick = () => {
-  hideSteps()
-  stepNo = 1
-  steps[stepNo].style.display = "grid"
-  confirmBtn.style.display = "none"
-  nextStep.style.display = "inline-block"
-}
+  hideSteps();
+  stepNo = 1;
+  steps[stepNo].style.display = "grid";
+  confirmBtn.style.display = "none";
+  nextStep.style.display = "inline-block";
+};
 
 confirmBtn.onclick = () => {
   hideSteps();
@@ -277,14 +305,13 @@ payToggle.onclick = () => {
   if (!payToggle.checked) {
     setPrices("mo");
     setCustomerOrder("month");
-    toggleOption[0].style.color = "hsl(213, 96%, 18%)"
-    toggleOption[1].style.color = "grey"
+    toggleOption[0].style.color = "hsl(213, 96%, 18%)";
+    toggleOption[1].style.color = "grey";
   } else {
     setPrices("yr");
     setCustomerOrder("year");
-    toggleOption[1].style.color = "hsl(213, 96%, 18%)"
-    toggleOption[0].style.color = "grey"
-
+    toggleOption[1].style.color = "hsl(213, 96%, 18%)";
+    toggleOption[0].style.color = "grey";
   }
 };
 
