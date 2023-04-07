@@ -198,7 +198,6 @@ function setPrices(period) {
   if (period === "yr") {
     timeSpan = "yr";
     payPeriod = "Yearly";
-    console.log(payPeriod);
     zero = "0";
     Object.keys(trialContainer).forEach((container) => {
       trialContainer[container].style.display = "inline";
@@ -213,7 +212,6 @@ function setPrices(period) {
   } else {
     timeSpan = "mo";
     payPeriod = "Monthly";
-    console.log(payPeriod);
     zero = "";
     Object.keys(trialContainer).forEach((container) => {
       trialContainer[container].style.display = "none";
@@ -275,7 +273,6 @@ function calcTotal() {
     totalAddonPrices += parseInt(addOnPrices[x]);
   }
   if (totalAddonPrices !== 0) {
-    console.log(addOnPrices.length);
     totalPrice = parseInt(intPlanPrice) + totalAddonPrices;
   } else {
     totalPrice = parseInt(intPlanPrice);
