@@ -107,12 +107,12 @@ function removeBorder() {
   Object.keys(plans).forEach((plan) => {
     plans[plan].style.borderColor = "hsl(206, 94%, 87%)";
     plans[plan].style.backgroundColor = "white";
-    plans[plan].onmouseover =() => {
+    plans[plan].onmouseover = () => {
       plans[plan].style.borderColor = "hsl(243, 100%, 62%)";
-    }
-    plans[plan].onmouseleave =() => {
-    plans[plan].style.borderColor = "hsl(206, 94%, 87%)";
-    }
+    };
+    plans[plan].onmouseleave = () => {
+      plans[plan].style.borderColor = "hsl(206, 94%, 87%)";
+    };
   });
 }
 
@@ -320,9 +320,9 @@ Object.keys(plans).forEach((plan) => {
     removeBorder();
     setBorderColor(plan);
     planNo = plan;
-    plans[planNo].onmouseleave =() => {
+    plans[planNo].onmouseleave = () => {
       plans[planNo].style.borderColor = "hsl(243, 100%, 62%)";
-      }
+    };
     selectedPlanName.innerHTML = `${planName[plan].innerHTML} (${payPeriod})`;
     selectedPlanPrice.innerHTML = chosenPlanPrice[plan].innerHTML;
   };
@@ -356,8 +356,17 @@ Object.keys(addOnsCheck).forEach((check) => {
       addOnContainer.appendChild(newAddOnPrice);
       addOnNo = check;
       addOns[check].style.borderColor = "hsl(243, 100%, 62%)";
+      addOns[check].onmouseleave = () => {
+        addOns[check].style.borderColor = "hsl(243, 100%, 62%)";
+      };
     } else {
       addOns[check].style.borderColor = "hsl(206, 94%, 87%)";
+      addOns[check].onmouseover = () => {
+        addOns[check].style.borderColor = "hsl(243, 100%, 62%)";
+      };
+      addOns[check].onmouseleave = () => {
+        addOns[check].style.borderColor = "hsl(206, 94%, 87%)";
+      };
       addOnContainer.remove();
     }
   };
