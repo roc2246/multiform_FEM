@@ -284,9 +284,17 @@ section:not(.step:nth-child(1)) {
 
 .personal-info__controls--label {
   color: var(--marine-blue);
-  font-weight: var(--bolder);
-  margin-bottom: 2rem;
+  font-weight: var(--bold);
+  font-size: .75rem;
+}
+
+.personal-info__controls--error-mssg{
+  display: none;
+  float: right;
   font-weight: 700;
+  color: var(--strawberry-red);
+  font-size: .75rem;
+  margin-top: .25rem;
 }
 
 .personal-info__controls--input {
@@ -294,10 +302,29 @@ section:not(.step:nth-child(1)) {
   height: 2rem;
 
   margin-bottom: 1rem;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
   border-color: var(--pastel-blue);
   border-style: solid;
+  border-width: .5px;
   border-radius: 0.25rem;
+  
+  font-weight: var(--bolder);
+  color: var(--marine-blue);
+}
+
+.personal-info__controls--input:hover {
+  cursor: pointer;
+  border-color: var(--purpleish-blue);
+  font-weight: var(--bolder);
+  color: var(--marine-blue);
+}
+
+.personal-info__controls--input:focus {
+  border-style: solid;
+  border-width: .5px;
+  border-radius: 0.25rem;
+  border-color: var(--purpleish-blue);
+  outline: none;
 }
 
 ::placeholder {

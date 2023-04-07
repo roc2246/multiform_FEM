@@ -2,7 +2,7 @@ let stepNo = 0;
 let planNo = 0;
 let addOnNo = 0;
 let timeSpan = "mo";
-let payPeriod = "Monthly"
+let payPeriod = "Monthly";
 
 const steps = document.getElementsByClassName("step");
 
@@ -15,6 +15,10 @@ const sidebarStepNo = document.getElementsByClassName("sidebar__step--no");
 const nameInput = document.getElementById("name");
 const emailInput = document.getElementById("email");
 const phoneInput = document.getElementById("phone");
+
+const errorMssg = document.getElementsByClassName(
+  "personal-info__controls--error-mssg"
+);
 
 const checkName = /^(?!\s*$).+/;
 const checkEmail =
@@ -109,7 +113,7 @@ function removeBorder() {
 function setBorderColor(no) {
   plans[no].style.borderStyle = "solid";
   plans[no].style.borderColor = "hsl(243, 100%, 62%)";
-  plans[no].style.backgroundColor =   "hsl(206, 94%, 87%)";
+  plans[no].style.backgroundColor = "hsl(206, 94%, 87%)";
 }
 
 function btnMgmt() {
@@ -128,10 +132,20 @@ function btnMgmt() {
   }
 }
 
-function verify(regex, input) {
+function verify(regex, input, mssgNo) {
   if (!regex.test(input.value)) {
-    input.value = "";
+    input.style.borderColor = "hsl(354, 84%, 57%)";
+    errorMssg[mssgNo].style.display = "inline";
     input.focus();
+  } else {
+    errorMssg[mssgNo].style.display = "none";
+    input.style.borderColor = "hsl(228, 100%, 84%)";
+    input.onmouseover = () => {
+      input.style.borderColor = "hsl(243, 100%, 62%)";
+    };
+    input.onmouseleave = () => {
+      input.style.borderColor = "hsl(228, 100%, 84%)";
+    };
   }
 }
 
@@ -168,21 +182,21 @@ function stepIncrement(inc) {
     btnMgmt();
   }
 
-  verify(checkName, nameInput);
-  verify(checkEmail, emailInput);
-  verify(checkPhone, phoneInput);
+  verify(checkName, nameInput, 0);
+  verify(checkEmail, emailInput, 1);
+  verify(checkPhone, phoneInput, 2);
 }
 
 function setPrices(period) {
   let zero;
   if (period === "yr") {
     timeSpan = "yr";
-    payPeriod = "Yearly"
-    console.log(payPeriod)
+    payPeriod = "Yearly";
+    console.log(payPeriod);
     zero = "0";
     Object.keys(trialContainer).forEach((container) => {
-      trialContainer[container].style.display="inline"
-    })
+      trialContainer[container].style.display = "inline";
+    });
     for (let x = 0; x < selectedAddOnPrice.length; x++) {
       selectedAddOnPrice[x].innerHTML =
         selectedAddOnPrice[x].innerHTML.slice(0, 3) +
@@ -192,12 +206,12 @@ function setPrices(period) {
     }
   } else {
     timeSpan = "mo";
-    payPeriod = "Monthly"
-    console.log(payPeriod)
+    payPeriod = "Monthly";
+    console.log(payPeriod);
     zero = "";
     Object.keys(trialContainer).forEach((container) => {
-      trialContainer[container].style.display="none"
-    })
+      trialContainer[container].style.display = "none";
+    });
     for (let x = 0; x < selectedAddOnPrice.length; x++) {
       selectedAddOnPrice[x].innerHTML =
         selectedAddOnPrice[x].innerHTML.slice(0, 3) +
