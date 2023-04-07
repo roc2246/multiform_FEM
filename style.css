@@ -685,11 +685,16 @@ background-color: var(--purpleish-blue);
   margin-right: auto;
 }
 
+.thank-you__heading{
+  margin-bottom: 0;
+}
+
 .thank-you__paragraph {
   text-align: center;
   color: grey;
   word-break: break-word;
   max-width: 32rem;
+  line-height: 1.5rem;
 }
 
 .thank-you__paragraph--mailto {
