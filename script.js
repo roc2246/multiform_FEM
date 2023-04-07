@@ -329,9 +329,9 @@ Object.keys(addOnsCheck).forEach((check) => {
       addOnContainer.appendChild(newAddOnName);
       addOnContainer.appendChild(newAddOnPrice);
       addOnNo = check;
-      addOns[check].style.borderColor = "white";
+      addOns[check].style.borderColor = "hsl(243, 100%, 62%)";
     } else {
-      addOns[check].style.borderColor = "black";
+      addOns[check].style.borderColor = "hsl(206, 94%, 87%)";
       addOnContainer.remove();
     }
   };

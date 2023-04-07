@@ -535,6 +535,9 @@ input:checked + .plan__toggle-box--round:before {
   padding: 0.75rem;
 
   border: solid;
+  border-color: var(--light-blue);
+  border-radius: 0.5rem;
+  border-width: 0.05rem;
 }
 
 .add-ons__control--checkbox {
