@@ -2,6 +2,7 @@ let stepNo = 0;
 let planNo = 0;
 let addOnNo = 0;
 let timeSpan = "mo";
+let payPeriod = "Monthly"
 
 const steps = document.getElementsByClassName("step");
 
@@ -176,6 +177,8 @@ function setPrices(period) {
   let zero;
   if (period === "yr") {
     timeSpan = "yr";
+    payPeriod = "Yearly"
+    console.log(payPeriod)
     zero = "0";
     Object.keys(trialContainer).forEach((container) => {
       trialContainer[container].style.display="inline"
@@ -189,6 +192,8 @@ function setPrices(period) {
     }
   } else {
     timeSpan = "mo";
+    payPeriod = "Monthly"
+    console.log(payPeriod)
     zero = "";
     Object.keys(trialContainer).forEach((container) => {
       trialContainer[container].style.display="none"
@@ -269,6 +274,7 @@ nextStep.onclick = () => {
   stepIncrement(1);
   if (stepNo === 3) {
     grandTotal.innerHTML = `+$${calcTotal()}/${timeSpan}`;
+    selectedPlanName.innerHTML = `${planName[planNo].innerHTML} (${payPeriod})`;
   }
 };
 
@@ -297,7 +303,7 @@ Object.keys(plans).forEach((plan) => {
     removeBorder();
     setBorderColor(plan);
     planNo = plan;
-    selectedPlanName.innerHTML = planName[plan].innerHTML;
+    selectedPlanName.innerHTML = `${planName[plan].innerHTML} (${payPeriod})`;
     selectedPlanPrice.innerHTML = chosenPlanPrice[plan].innerHTML;
   };
 });
