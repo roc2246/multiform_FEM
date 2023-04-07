@@ -272,6 +272,10 @@ section:not(.step:nth-child(1)) {
   }
 }
 
+.btn--confirm:hover{
+  background-color: var(--pastel-blue);
+}
+
 /* Form */
 .plan-select {
   display: flex;
@@ -653,6 +657,10 @@ input:checked + .plan__toggle-box--round:before {
   grid-column: 1/2;
   grid-row: 2/3;
   color: grey;
+}
+
+.change-plan:hover {
+  color: var(--purpleish-blue) !important;
 }
 
 .change-plan:visited {
