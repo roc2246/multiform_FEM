@@ -337,10 +337,11 @@ section:not(.step:nth-child(1)) {
 
 .plan__option {
   grid-row: 2;
-  height: 10rem;
+  height: 9rem;
   border: solid;
-  border-color: grey;
+  border-color: var(--light-blue);
   border-radius: 0.5rem;
+  border-width: .05rem;
   padding: 1rem;
 }
 
@@ -379,6 +380,8 @@ section:not(.step:nth-child(1)) {
 .plan__option--name {
   color: var(--marine-blue);
   word-break: break-all;
+  margin-top: 2rem;
+  margin-bottom: .5rem;
 }
 
 @media (max-width: 375px) {
@@ -391,14 +394,16 @@ section:not(.step:nth-child(1)) {
 }
 
 .plan__option:nth-child(2) {
-  border: solid;
-  border-color: black;
+  border-color: var(--purpleish-blue);
 }
 
 .plan__option--price {
   color: grey;
-  font-size: 0.75rem;
+  font-size: 1rem;
+  font-weight: var(--bold);
   word-break: break-all;
+  margin-top: 0;
+  margin-bottom: .5rem;
 }
 
 @media (max-width: 375px) {
@@ -409,6 +414,15 @@ section:not(.step:nth-child(1)) {
     margin: 0;
   }
 }
+
+.plan__option--trial{
+  font-size: .8rem;
+  font-weight: var(--bold);
+  margin-top: 0;
+  margin-bottom: 0;
+  color: var(--marine-blue);
+}
+
 
 .plan__toggle-box {
   display: flex;
@@ -439,7 +453,6 @@ section:not(.step:nth-child(1)) {
 }
 
 /* Toggle Switch */
-
 .plan__toggle-box--toggle {
   position: relative;
   display: inline-block;
