@@ -174,11 +174,12 @@ function stepIncrement(inc) {
 
 function setPrices(period) {
   let zero;
-  let trialOffer;
   if (period === "yr") {
     timeSpan = "yr";
     zero = "0";
-    trialOffer = "2 months free";
+    Object.keys(trialContainer).forEach((container) => {
+      trialContainer[container].style.display="inline"
+    })
     for (let x = 0; x < selectedAddOnPrice.length; x++) {
       selectedAddOnPrice[x].innerHTML =
         selectedAddOnPrice[x].innerHTML.slice(0, 3) +
@@ -189,7 +190,9 @@ function setPrices(period) {
   } else {
     timeSpan = "mo";
     zero = "";
-    trialOffer = "&nbsp";
+    Object.keys(trialContainer).forEach((container) => {
+      trialContainer[container].style.display="none"
+    })
     for (let x = 0; x < selectedAddOnPrice.length; x++) {
       selectedAddOnPrice[x].innerHTML =
         selectedAddOnPrice[x].innerHTML.slice(0, 3) +
@@ -203,10 +206,6 @@ function setPrices(period) {
   onlinePrice.innerHTML = `+$1${zero}/${period}`;
   storagePrice.innerHTML = `+$2${zero}/${period}`;
   profilePrice.innerHTML = `+$2${zero}/${period}`;
-
-  Object.keys(trialContainer).forEach((trial) => {
-    trialContainer[trial].innerHTML = trialOffer;
-  });
 }
 
 function addOnInfo(className) {
