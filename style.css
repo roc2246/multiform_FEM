@@ -584,10 +584,19 @@ background-color: var(--purpleish-blue);
 }
 
 /* Summary */
+
+.orders-container{
+  background-color: var(--light-blue);
+  border-radius: .5rem;
+  padding: 1rem;
+}
+
 .confirmation__orders--plan {
   display: grid;
   grid-template-columns: repeat(3, auto);
   justify-content: space-between;
+  margin-bottom: 1rem;
+
 }
 
 .plan-name {
@@ -621,9 +630,13 @@ background-color: var(--purpleish-blue);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .add-on-name {
+  font-weight: var(--bold);
   margin: 0;
   color: grey;
 }
@@ -637,14 +650,17 @@ background-color: var(--purpleish-blue);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .confirmation__total--heading {
+  font-weight: var(--bold);
   color: grey;
 }
 
 .confirmation__total--price {
-  color: var(--marine-blue);
+  color: var(--purpleish-blue);
 }
 
 /* Thank You */
