@@ -105,7 +105,6 @@ main {
   .sidebar__step {
     margin-top: 2rem;
   }
-  
 }
 
 .sidebar__step--no {
@@ -121,7 +120,7 @@ main {
 
   border-radius: 50%;
   border: solid;
-  border-width: .05rem;
+  border-width: 0.05rem;
 
   font-weight: 100;
 
@@ -182,11 +181,19 @@ main {
   }
 }
 .heading {
+  margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+@media (max-width: 375px) {
+  .heading {
+    margin-top: 0.5rem;
+  }
 }
 
 .heading--primary {
   color: var(--marine-blue);
+  font-weight: 900;
 }
 
 .heading--secondary {
@@ -207,6 +214,14 @@ section:not(.step:nth-child(1)) {
   height: 4rem;
 }
 
+@media (max-width: 375px) {
+  .btn-box {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
 .btn {
   height: 2.5rem;
   width: 6rem;
@@ -222,10 +237,25 @@ section:not(.step:nth-child(1)) {
   color: grey;
 }
 
+@media (max-width: 375px) {
+  .btn--go-back{
+    margin-top: 1rem;
+    margin-left: -.5rem;
+    padding-left: 0;
+  }
+}
+
 .btn--next-step {
   float: right;
   background-color: var(--marine-blue);
   color: white;
+}
+
+@media (max-width: 375px) {
+  .btn--next-step{
+    margin-right: 1rem;
+    margin-top: 1rem;
+  }
 }
 
 .btn--confirm {
@@ -236,12 +266,12 @@ section:not(.step:nth-child(1)) {
 }
 
 @media (max-width: 375px) {
-  .btn-box {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+  .btn--confirm{
+    margin-right: 1rem;
+    margin-top: 1rem;
   }
 }
+
 
 /* Form */
 .plan-select {
@@ -266,13 +296,15 @@ section:not(.step:nth-child(1)) {
 
   margin-bottom: 1rem;
   margin-top: 0.5rem;
-  border-color: rgb(184, 181, 181);
+  border-color: var(--pastel-blue);
   border-style: solid;
+  border-radius: 0.25rem;
 }
 
 ::placeholder {
   font-weight: var(--bolder);
   color: rgb(170, 169, 169);
+  padding: 0.5rem;
 }
 
 /* Plan */
@@ -316,7 +348,7 @@ section:not(.step:nth-child(1)) {
   .plan__option {
     display: grid;
     grid-template-columns: 2.5rem auto;
-    column-gap: .5rem;
+    column-gap: 0.5rem;
     max-width: 100%;
     height: 3.5rem;
   }
@@ -330,7 +362,7 @@ section:not(.step:nth-child(1)) {
     grid-column: 1;
     grid-row: 4;
   }
-  
+
   .plan__option:nth-child(5) {
     grid-column: 1;
     grid-row: 4;
@@ -574,11 +606,10 @@ input:checked + .plan__toggle-box--round:before {
 }
 
 @media (max-width: 375px) {
-  .thank-you{
+  .thank-you {
     padding-top: 5rem;
     padding-bottom: 5rem;
   }
-  
 }
 
 .thank-you__img-box,
