@@ -101,12 +101,14 @@ function setStepNoStyle() {
 function removeBorder() {
   Object.keys(plans).forEach((plan) => {
     plans[plan].style.borderColor = "hsl(206, 94%, 87%)";
+    plans[plan].style.backgroundColor = "white";
   });
 }
 
 function setBorderColor(no) {
   plans[no].style.borderStyle = "solid";
   plans[no].style.borderColor = "hsl(243, 100%, 62%)";
+  plans[no].style.backgroundColor =   "hsl(206, 94%, 87%)";
 }
 
 function btnMgmt() {

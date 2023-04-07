@@ -370,6 +370,12 @@ section:not(.step:nth-child(1)) {
   }
 }
 
+.plan__option:nth-child(2) {
+  border-color: var(--purpleish-blue);
+  background-color: var(--light-blue);
+}
+
+
 @media (max-width: 375px) {
   .plan__option---img-box {
     grid-column: 1;
@@ -391,10 +397,6 @@ section:not(.step:nth-child(1)) {
 
     margin: 0;
   }
-}
-
-.plan__option:nth-child(2) {
-  border-color: var(--purpleish-blue);
 }
 
 .plan__option--price {
