@@ -33,10 +33,10 @@ const checkPhone = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/;
 
 const plans = document.getElementsByClassName("plan__option");
 
-let arcadePrice = document.getElementsByClassName("plan__option--price")[0];
-let advancedPrice = document.getElementsByClassName("plan__option--price")[1];
-let proPrice = document.getElementsByClassName("plan__option--price")[2];
-let trialContainer = document.getElementsByClassName("plan__option--trial");
+const arcadePrice = document.getElementsByClassName("plan__option--price")[0];
+const advancedPrice = document.getElementsByClassName("plan__option--price")[1];
+const proPrice = document.getElementsByClassName("plan__option--price")[2];
+const trialContainer = document.getElementsByClassName("plan__option--trial");
 
 const toggleCont = document.getElementsByClassName(
   "plan__toggle-box--toggle"
@@ -55,34 +55,34 @@ const addOnsCheck = document.getElementsByClassName(
 );
 const addOnsPrice = document.getElementsByClassName("add-ons__control--price");
 
-let onlinePrice = document.getElementsByClassName("add-ons__control--price")[0];
-let storagePrice = document.getElementsByClassName(
+const onlinePrice = document.getElementsByClassName("add-ons__control--price")[0];
+const storagePrice = document.getElementsByClassName(
   "add-ons__control--price"
 )[1];
-let profilePrice = document.getElementsByClassName(
+const profilePrice = document.getElementsByClassName(
   "add-ons__control--price"
 )[2];
 
 const planName = document.getElementsByClassName("plan__option--name");
 const chosenPlanPrice = document.getElementsByClassName("plan__option--price");
 
-let selectedPlanName = document.getElementsByClassName("plan-name")[0];
-let selectedPlanPrice = document.getElementsByClassName("plan-price")[0];
+const selectedPlanName = document.getElementsByClassName("plan-name")[0];
+const selectedPlanPrice = document.getElementsByClassName("plan-price")[0];
 
 const changeOrder = document.getElementsByClassName("change-plan")[0];
 
-let selectedAddOnName = document.getElementsByClassName("add-on-name");
-let selectedAddOnPrice = document.getElementsByClassName("add-on-price");
+const selectedAddOnName = document.getElementsByClassName("add-on-name");
+const selectedAddOnPrice = document.getElementsByClassName("add-on-price");
 
-let orderedAddOns = document.getElementsByClassName(
+const orderedAddOns = document.getElementsByClassName(
   "confirmation__orders--add-ons"
 )[0];
 
-let totalPerSpan = document.getElementsByClassName(
+const totalPerSpan = document.getElementsByClassName(
   "confirmation__total--heading"
 )[0];
 
-let grandTotal = document.getElementsByClassName(
+const grandTotal = document.getElementsByClassName(
   "confirmation__total--price"
 )[0];
 
@@ -170,6 +170,16 @@ function formatPhone(obj) {
   });
 }
 
+function setLayout(){
+  if (stepNo === 1) {
+    steps[stepNo].style.display = "grid";
+  } else if (stepNo === 0 || stepNo === 3) {
+    steps[stepNo].style.display = "block";
+  } else if (stepNo === 2) {
+    steps[stepNo].style.display = "flex";
+  }
+}
+
 phoneInput.addEventListener("keyup", () => {
   formatPhone(phoneInput);
 });
@@ -184,13 +194,7 @@ function stepIncrement(inc) {
     stepNo += inc;
     resetStepNoStyle();
     setStepNoStyle();
-    if (stepNo === 1) {
-      steps[stepNo].style.display = "grid";
-    } else if (stepNo === 0 || stepNo === 3) {
-      steps[stepNo].style.display = "block";
-    } else if (stepNo === 2) {
-      steps[stepNo].style.display = "flex";
-    }
+    setLayout();
     btnMgmt();
   }
 
@@ -351,8 +355,8 @@ payToggle.onclick = () => {
 Object.keys(addOnsCheck).forEach((check) => {
   const addOnContainer = document.createElement("div");
   addOnContainer.className = "confirmation__orders--add-on";
-  let newAddOnName = addOnInfo("add-on-name");
-  let newAddOnPrice = addOnInfo("add-on-price");
+  const newAddOnName = addOnInfo("add-on-name");
+  const newAddOnPrice = addOnInfo("add-on-price");
   addOnsCheck[check].onclick = () => {
     if (addOnsCheck[check].checked) {
       newAddOnName.innerHTML = addOnsName[check].innerHTML;
