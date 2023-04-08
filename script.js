@@ -4,6 +4,12 @@ let addOnNo = 0;
 let timeSpan = "mo";
 let payPeriod = "Monthly";
 
+const marineBlue = "hsl(213, 96%, 18%)";
+const purpleishBlue = "hsl(243, 100%, 62%)";
+const pastelBlue = "hsl(228, 100%, 84%)"
+const lightBlue = "hsl(206, 94%, 87%)"
+const strawberryRed = "hsl(354, 84%, 57%)"
+
 const steps = document.getElementsByClassName("step");
 
 const nextStep = document.getElementsByClassName("btn--next-step")[0];
@@ -98,28 +104,28 @@ function resetStepNoStyle() {
 }
 
 function setStepNoStyle() {
-  sidebarStepNo[stepNo].style.backgroundColor = "hsl(206, 94%, 87%)";
+  sidebarStepNo[stepNo].style.backgroundColor = lightBlue;
   sidebarStepNo[stepNo].style.border = "none";
   sidebarStepNo[stepNo].style.color = "black";
 }
 
 function removeBorder() {
   Object.keys(plans).forEach((plan) => {
-    plans[plan].style.borderColor = "hsl(206, 94%, 87%)";
+    plans[plan].style.borderColor = lightBlue;
     plans[plan].style.backgroundColor = "white";
     plans[plan].onmouseover = () => {
-      plans[plan].style.borderColor = "hsl(243, 100%, 62%)";
+      plans[plan].style.borderColor = purpleishBlue;
     };
     plans[plan].onmouseleave = () => {
-      plans[plan].style.borderColor = "hsl(206, 94%, 87%)";
+      plans[plan].style.borderColor = lightBlue;
     };
   });
 }
 
 function setBorderColor(no) {
   plans[no].style.borderStyle = "solid";
-  plans[no].style.borderColor = "hsl(243, 100%, 62%)";
-  plans[no].style.backgroundColor = "hsl(206, 94%, 87%)";
+  plans[no].style.borderColor = purpleishBlue;
+  plans[no].style.backgroundColor = lightBlue;
 }
 
 function btnMgmt() {
@@ -140,17 +146,17 @@ function btnMgmt() {
 
 function verify(regex, input, mssgNo) {
   if (!regex.test(input.value)) {
-    input.style.borderColor = "hsl(354, 84%, 57%)";
+    input.style.borderColor = strawberryRed;
     errorMssg[mssgNo].style.display = "inline";
     input.focus();
   } else {
     errorMssg[mssgNo].style.display = "none";
-    input.style.borderColor = "hsl(228, 100%, 84%)";
+    input.style.borderColor = pastelBlue;
     input.onmouseover = () => {
-      input.style.borderColor = "hsl(243, 100%, 62%)";
+      input.style.borderColor = purpleishBlue;
     };
     input.onmouseleave = () => {
-      input.style.borderColor = "hsl(228, 100%, 84%)";
+      input.style.borderColor = pastelBlue;
     };
   }
 }
@@ -282,7 +288,7 @@ function calcTotal() {
 }
 
 window.onload = () => {
-  sidebarStepNo[0].style.backgroundColor = "hsl(206, 94%, 87%)";
+  sidebarStepNo[0].style.backgroundColor = lightBlue;
   sidebarStepNo[0].style.border = "none";
   sidebarStepNo[0].style.color = "black";
 };
@@ -321,7 +327,7 @@ Object.keys(plans).forEach((plan) => {
     setBorderColor(plan);
     planNo = plan;
     plans[planNo].onmouseleave = () => {
-      plans[planNo].style.borderColor = "hsl(243, 100%, 62%)";
+      plans[planNo].style.borderColor = purpleishBlue;
     };
     selectedPlanName.innerHTML = `${planName[plan].innerHTML} (${payPeriod})`;
     selectedPlanPrice.innerHTML = chosenPlanPrice[plan].innerHTML;
@@ -332,12 +338,12 @@ payToggle.onclick = () => {
   if (!payToggle.checked) {
     setPrices("mo");
     setCustomerOrder("month");
-    toggleOption[0].style.color = "hsl(213, 96%, 18%)";
+    toggleOption[0].style.color = marineBlue;
     toggleOption[1].style.color = "grey";
   } else {
     setPrices("yr");
     setCustomerOrder("year");
-    toggleOption[1].style.color = "hsl(213, 96%, 18%)";
+    toggleOption[1].style.color = marineBlue;
     toggleOption[0].style.color = "grey";
   }
 };
@@ -355,17 +361,17 @@ Object.keys(addOnsCheck).forEach((check) => {
       addOnContainer.appendChild(newAddOnName);
       addOnContainer.appendChild(newAddOnPrice);
       addOnNo = check;
-      addOns[check].style.borderColor = "hsl(243, 100%, 62%)";
+      addOns[check].style.borderColor = purpleishBlue;
       addOns[check].onmouseleave = () => {
-        addOns[check].style.borderColor = "hsl(243, 100%, 62%)";
+        addOns[check].style.borderColor = purpleishBlue;
       };
     } else {
-      addOns[check].style.borderColor = "hsl(206, 94%, 87%)";
+      addOns[check].style.borderColor = lightBlue;
       addOns[check].onmouseover = () => {
-        addOns[check].style.borderColor = "hsl(243, 100%, 62%)";
+        addOns[check].style.borderColor = purpleishBlue;
       };
       addOns[check].onmouseleave = () => {
-        addOns[check].style.borderColor = "hsl(206, 94%, 87%)";
+        addOns[check].style.borderColor = lightBlue;
       };
       addOnContainer.remove();
     }
